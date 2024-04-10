@@ -1,0 +1,239 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        ScrollReveal({ reset: true });
+    </script>
+    <title>ThermoBox</title>
+
+    <link rel="shortcut icon" href="./logo-tb.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="gridHome">
+
+        <header>
+
+            <nav class="navbar">
+
+                <div class="navbar-overlay" onclick="toggleMenuOpen()"></div>
+
+                <button type="button" class="navbar-burger" onclick="toggleMenuOpen()">
+                    <span class="material-icons">menu</span>
+                </button>
+
+                <a class="index" href="./index.html">
+                    <h1 class="navbar-title"><b>ThermoBox</b></h1>
+                </a>
+
+                <nav class="navbar-menu">
+                    <div style="    display: flex;
+                    flex-direction: column;
+                    align-items: center;">
+                        <a href="#nosotros">
+
+                            <button type="button" class="active">Nosotros</button>
+                        </a>
+
+                        <a href="#section-menu">
+
+                            <button type="button" class="active">Menú</button>
+                        </a>
+
+                        <a href="#section-contacto">
+
+                            <button type="button" class="active">Contacto</button>
+                        </a>
+                    </div>
+                    <div>
+                        <img class="logoHome" src="./logo-fondoblanco.png" alt="logo">
+                    </div>
+
+                </nav>
+
+            </nav>
+
+        </header>
+
+        <script type="text/javascript">
+            const toggleMenuOpen = () => {
+                document.body.classList.toggle("open");
+            };
+        </script>
+
+
+        <main class="mainHome">
+
+            <section id="nosotros">
+
+                <div class="card">
+                    <div class="card-body">
+                        <img class="imgLogo" src="./logo-fondoblanco-removebg-preview.png" alt="logo">
+                        <h2 class="card-title">Bienvenidos</h2>
+                        <p class="card-text">Fabricación de equipamiento comercial, Gastronómico en acero inoxidable.</p>
+                    </div>
+                </div>
+                <div class="div-since">
+                    <p class="text-since"><b></b></p>
+                </div>
+            </section>
+
+            <section id="section-menu">
+
+                <p id="menu-title" onclick="toggleMenuSection()"><b>Menú</b></p>
+
+                <p class="text-menu">Calidad Inigualable, Satisfacción Asegurada. <br> ¡Descubre nuestros equipos comerciales de excelencia hoy mismo! <br> Realizamos envios a todo el pais</p>
+
+                <div class="carousel-inner" id="hidden">
+                    <div class="carousel-item">
+                        <img src="./producto-1.png" alt="producto-1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./producto-2.png" alt="producto-2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./producto-3.png" alt="producto-3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./producto-4.png" alt="producto-4">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./producto-5.png" alt="producto-5">
+                    </div>
+                </div>
+
+                <p class="text-menu">Tu satisfacción, nuestra meta. <br> Ofrecemos equipos comerciales de la más alta calidad.</p>
+            </section>
+
+            <section id="section-contacto">
+                <p id="contacto-title"><b>Contacto</b></p>
+
+                <div class="cardDos">
+                    <div class="card-body">
+
+
+                        <div class="card-wpp">
+                            <h3 class="titulo-wpp">Whatsapp</h3>
+                            <p class="text-wpp">Podes contactarnos directamente por whatsapp tocando el siguiente botón
+                            </p>
+                            <button class="boton-wpp">
+                                <a href="https://wa.link/lkd2gz" target="_blank">
+                                    <img src="./whatsapp.svg" alt="whatsapp">
+                                </a>
+                            </button>
+                        </div>
+
+
+                        <div class="card-pedidos">
+                            <h3 class="titulo-pedidos">Tik-Tok</h3>
+                            <p class="text-pedidos">Tambien estamos en tik-tok</p>
+                            <button class="boton-pedidos">
+                                <a href="https://www.tiktok.com/@thermoboxarg"
+                                    target="_blank">
+                                    <img src="./tik-tok.png" alt="tiktok">
+                                </a>
+                            </button>
+                        </div>
+
+                        <div class="card-instagram">
+                            <h3 class="titulo-instagram">Instagram</h3>
+                            <p class="text-instagram">Podes seguirnos en nuestro instagram para no perderte ninguna
+                                promocion!</p>
+                            <button class="boton-instagram">
+                                <a href="https://www.instagram.com/thermoboxarg/" target="_blank">
+                                    <img src="./instagram.svg" alt="instagram">
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-info">
+                    <div class="card-body">
+                        <h3 class="info">Ubicación</h3>
+                        <p class="text-info">Arenales 3474<br> 7mo piso - dto. nº 38 <br>CABA, Argentina</p>
+                        <h3 class="info">Telefono</h3>
+                        <p class="text-info">11 4143-6784</p>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+
+
+
+        <footer class="ftHome">
+
+            <div class="flexTextoFt">
+                <p class="textoFt">Copyrigth - todos los derechos reservados</p>
+                <p class="textoFt">Seguinos en nuestras redes</p>
+            </div>
+
+            <div class="flexbotones">
+                <a class="instagram" href="https://www.instagram.com/thermoboxarg/" target="_blank">
+                    <img class="iconoFtHome" src="./instagram.svg" alt="instagram">
+                </a>
+
+                <a class="whats" href="https://wa.link/lkd2gz" target="_blank">
+                    <img class="iconoFtHome" src="./whatsapp.svg" alt="whatsapp">
+                </a>
+
+                <a class="linked" href="https://www.tiktok.com/@thermoboxarg" target="_blank">
+                    <img class="iconoFtHome" src="./tik-tok.png" style="width: 18px;" alt="facebook">
+                </a>
+
+            </div>
+        </footer>
+    </div>
+
+    <script>
+
+
+        const carouselInner = document.querySelector('.carousel-inner');
+        const items = document.querySelectorAll('.carousel-item');
+
+
+        let currentIndex = 0;
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % items.length;
+            const translateValue = -currentIndex * 100 + '%';
+            carouselInner.style.transform = 'translateX(' + translateValue + ')';
+        }, 1500);
+
+
+
+
+
+
+
+
+
+
+        ScrollReveal().reveal('#nosotros', { delay: 200 });
+        ScrollReveal().reveal('#section-menu', { delay: 250 });
+        ScrollReveal().reveal('#section-contacto', { delay: 300 });
+
+    </script>
+
+
+    <!--Script de BST-->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
