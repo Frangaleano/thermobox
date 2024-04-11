@@ -41,8 +41,7 @@
     font-family: "Poppins";
     box-sizing: border-box;
     padding: 10px 4px;
-    border-bottom: 4px solid black;
-    border-top: 4px solid black;
+    border-bottom: 1px solid white;
   }
 
   button .navbar-burger {
@@ -60,6 +59,7 @@
 
   .material-icons {
     margin-top: 0px;
+    
   }
 
   .logoHome {
@@ -352,7 +352,7 @@
   }
 
 
-  .card-pedidos {
+  .card-tiktok {
     text-align: center;
     margin: 25px;
     margin-top: 20px;
@@ -363,21 +363,22 @@
     box-sizing: border-box;
     border-radius: 20px;
     border: solid 3px #c92929;
+    align-items: center;
   }
 
-  .titulo-pedidos {
+  .titulo-tiktok {
     font-family: "Poppins";
     color: white;
     margin: 15px 0px;
   }
 
-  .text-pedidos {
+  .text-tiktok {
     font-family: "Poppins";
     font-size: 19px;
     margin-top: 0px;
   }
 
-  .boton-pedidos {
+  .boton-tiktok {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -390,7 +391,7 @@
     animation: shadowAnimationIn 1s infinite;
   }
 
-  .boton-pedidos img {
+  .boton-tiktok img {
     width: 25px;
     height: 24px;
   }
