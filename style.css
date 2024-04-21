@@ -257,7 +257,7 @@
 
   .menu-button-container p {
     margin: 0px;
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .menu-button {
@@ -410,6 +410,7 @@
 
   ul>li {
     color: rgb(255, 255, 255);
+    font-size: 16px;
   }
 
   ul li:before {
@@ -445,6 +446,31 @@
 
   input[type="radio"]:checked {
     background-color: #000000;
+  }
+
+  .palabra-detalles {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .detalles {
+    display: none;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transición suave */
+}
+
+  .flecha-detalles-abajo {
+    border: solid #e22e2e;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 4px;
+    transform: rotate(45deg);
+    transition: transform 0.8s;
+    margin-left: 8px;
+    margin-bottom: 2px;
   }
 
   .boton-agregar {
