@@ -24,7 +24,7 @@
                 <div class="navbar-overlay" onclick="toggleMenuOpen()"></div>
 
                 <button type="button" class="navbar-burger" onclick="toggleMenuOpen()">
-                    <span class="material-icons" style="font-size: 28px;">menu</span>
+                    <span class="material-icons" style="font-size: 28px; color: black;">menu</span>
                 </button>
 
                 <a class="index" href="./index.html">
@@ -88,8 +88,8 @@
                     <div class="card-body">
                         <img class="imgLogo" src="./logo-fondoblanco-removebg-preview.png" alt="logo">
                         <h2 class="card-title">Bienvenidos</h2>
-                        <p class="card-text">Fabricación y comercialización de equipamiento comercial, Gastronómico en
-                            acero inoxidable.</p>
+                        <p class="card-text">Fabricación y Comercialización de Equipamiento Comercial, Gastronómico en
+                            Acero Inoxidable.</p>
                     </div>
                 </div>
                 <div class="div-since">
@@ -128,11 +128,11 @@
                             onclick="toggleSubMenuCuatro()">Heladeras Bajo Mesada y Exhibidoras</button>
                         <div id="subMenuCuatro" class="sub-menu-cuatro">
                         </div>
-
+                        <!--
                         <button class="menu-button main-menu-button" id="boton5" onclick="toggleSubMenuCinco()">Mesadas
                             y Estantes.</button>
                         <div id="subMenuCinco" class="sub-menu-cinco">
-                        </div>
+                        </div>-->
 
                     </div>
                 </div>
@@ -333,7 +333,19 @@
                 const buttonsHTML = `
                 <div class="div-botones-submenu" data-button-number="1">
                     <div class="div-producto">
-                        <img class="img-productos" src="./producto-1.png" alt="galleta grasa">
+
+                        <div class="carousel-container">
+                            <div class="carousel-images" id="carousel-images-1">
+                                <img src="producto-1-1.png" alt="Imagen 1" class="carousel-image">
+                                <img src="producto-1-2.png" alt="Imagen 2" class="carousel-image">
+                                <img src="producto-1-3.png" alt="Imagen 3" class="carousel-image">
+                            </div>
+                            <button class="carousel-button prev" onclick="prevImage(1)">&#10094;</button> <!-- flecha izquierda -->
+                            <button class="carousel-button next" onclick="nextImage(1)">&#10095;</button> <!-- flecha derecha -->
+                        </div>
+
+
+
                         <div class="div-parrafos">
                             <button class="sub-menu-button" data-button-number="1">Warmer Economico<br> Sobremesada - WESM 400</button>
                             <div class="palabra-detalles">
@@ -373,9 +385,21 @@
 
                 <div class="div-botones-submenu" data-button-number="2">
                     <div class="div-producto">
-                        <img class="img-productos" src="./producto-2.png" alt="miñon">
+
+                        <div class="carousel-container">
+                            <div class="carousel-images" id="carousel-images-2">
+                                <img src="./img-pro/wesm-600-2.jpeg" alt="Imagen 1" class="carousel-image">
+                                <img src="./img-pro/wesm-600-3.jpeg" alt="Imagen 2" class="carousel-image">
+                                <img src="./img-pro/wesm-600-4.jpeg" alt="Imagen 3" class="carousel-image">
+                            </div>
+                            <button class="carousel-button prev" onclick="prevImage(2)">&#10094;</button> <!-- flecha izquierda -->
+                            <button class="carousel-button next" onclick="nextImage(2)">&#10095;</button> <!-- flecha derecha -->
+                        </div>
+
+
+
                         <div class="div-parrafos">
-                            <button class="sub-menu-button" data-button-number="2">Warmer Economico<br>Sobremesada - WESM 600</button>
+                            <button class="sub-menu-button" data-button-number="2">Warmer Economico<br> Sobremesada - WESM 600</button>
                             <div class="palabra-detalles">
                                 <p onclick="toggleDetalles(2)" class="producto-detalles" style="
                                 width: 117px;
@@ -414,7 +438,7 @@
                 
                 <div class="div-botones-submenu" data-button-number="3">
                     <div class="div-producto">
-                        <img class="img-productos" src="./producto-3.png" alt="miñon">
+                        <img class="carousel-image" src="./producto-3.png" alt="miñon">
                         <div class="div-parrafos">
                             <button class="sub-menu-button" data-button-number="3">Warmer Exhibidor <br>Sobremesada - WSM 500</button>
                             <div class="palabra-detalles">
@@ -453,9 +477,9 @@
 
                 <div class="div-botones-submenu" data-button-number="4">
                     <div class="div-producto">
-                        <img class="img-productos" src="./producto-4.png" alt="miñon">
+                        <img class="carousel-image" src="./producto-4.png" alt="miñon">
                         <div class="div-parrafos">
-                            <button class="sub-menu-button" data-button-number="4">Warmer Exhibidor<br>Sobremesada - WSM 800</button>
+                            <button class="sub-menu-button" data-button-number="4">Warmer Exhibidor<br> Sobremesada - WSM 800</button>
                             <div class="palabra-detalles">
                                 <p onclick="toggleDetalles(4)" class="producto-detalles" style="
                                 width: 117px;
@@ -492,9 +516,9 @@
 
                 <div class="div-botones-submenu" data-button-number="5">
                     <div class="div-producto">
-                        <img class="img-productos" src="./producto-3.png" alt="miñon">
+                        <img class="carousel-image" src="./producto-3.png" alt="miñon">
                         <div class="div-parrafos">
-                            <button class="sub-menu-button" data-button-number="5">Warmer Exhibidor<br>Sobremesada - WSM 1200</button>
+                            <button class="sub-menu-button" data-button-number="5">Warmer Exhibidor<br> Sobremesada - WSM 1200</button>
                             <div class="palabra-detalles">
                                 <p onclick="toggleDetalles(5)" class="producto-detalles" style="
                                 width: 117px;
@@ -532,9 +556,9 @@
 
                 <div class="div-botones-submenu" data-button-number="6">
                     <div class="div-producto">
-                        <img class="img-productos" src="./producto-3.png" alt="miñon">
+                        <img class="carousel-image" src="./producto-3.png" alt="miñon">
                         <div class="div-parrafos">
-                            <button class="sub-menu-button" data-button-number="6">Mantenedor<br>Exhibidor de Empanadas Calientes<br>ME 1200</button>
+                            <button class="sub-menu-button" data-button-number="6">Mantenedor<br> Exhibidor de Empanadas Calientes<br> ME 1200</button>
                             <div class="palabra-detalles">
                                 <p onclick="toggleDetalles(6)" class="producto-detalles" style="
                                 width: 117px;
@@ -572,9 +596,9 @@
 
                 <div class="div-botones-submenu" data-button-number="7">
                     <div class="div-producto">
-                        <img class="img-productos" src="./producto-3.png" alt="miñon">
+                        <img class="carousel-image" src="./producto-3.png" alt="miñon">
                         <div class="div-parrafos">
-                            <button class="sub-menu-button" data-button-number="7">Mantenedor<br>Exhibidor de Empanadas Calientes<br>ME 1800</button>
+                            <button class="sub-menu-button" data-button-number="7">Mantenedor<br> Exhibidor de Empanadas Calientes<br> ME 1800</button>
                             <div class="palabra-detalles">
                                 <p onclick="toggleDetalles(7)" class="producto-detalles" style="
                                 width: 117px;
@@ -607,9 +631,9 @@
 
                 <div class="div-botones-submenu" data-button-number="8">
                     <div class="div-producto">
-                        <img class="img-productos" src="./producto-3.png" alt="miñon">
+                        <img class="carousel-image" src="./producto-3.png" alt="miñon">
                         <div class="div-parrafos">
-                            <button class="sub-menu-button" data-button-number="8">Mantenedor<br>Exhibidor de Empanadas Calientes<br>ME 2400</button>
+                            <button class="sub-menu-button" data-button-number="8">Mantenedor<br> Exhibidor de Empanadas Calientes<br> ME 2400</button>
                             <div class="palabra-detalles">
                                 <p onclick="toggleDetalles(8)" class="producto-detalles" style="
                                 width: 117px;
@@ -687,11 +711,51 @@
 
             if (!subMenuDosVisible) {
                 const buttonsHTML = `
+                <div class="div-botones-submenu" data-button-number="50">
+                    <div class="div-producto">
+                        <img class="img-productos" src="./producto-1.png" alt="galleta grasa">
+                        <div class="div-parrafos">
+                            <button class="sub-menu-button" data-button-number="9">Warmer Exhibidor de Comidas Calientes <br> Take Away Vertical<br> WTA 600</button>
+                           <div class="palabra-detalles">
+                                <p onclick="toggleDetalles(50)" class="producto-detalles" style="
+                                width: 117px;
+                                font-size: 22px;
+                            ">Detalles</p>
+                            <span onclick="toggleDetalles(50)" id="flecha" class="flecha-detalles-abajo"></span>
+                            </div>
+                            <div class="detalles" data-button-number="50">
+                            <ul style="line-height:120%">
+                                <li><b>Medidas</b>: 600mm de Frente x 600mm de Fondo x 1900mm de Altura.</li>
+                                <li>Construido Gabinete de Ac Inoxidable 430 esmerilado interior y exterior.</li>
+                                <li>Aislación interior de lana mineral.</li>
+                                <li>Iluminación y calefacción por medio de lámparas halogenas de cuarzo de bajo consumo.</li>
+                                <li>Cuatro niveles de exhibición.</li>
+                                <li>Provisto de Interruptores por estante.</li>
+                                <li>Laterales de vidrio laminado 3+3 mm de espesor.</li>
+                                <li>Patas de acero inoxidable, provistas de regatones regulables de PVC.</li>  
+                            </ul>
+                            </div>
+                            <div class="div-detalles">
+                                <p>$8200</p>
+                                <input class="radio-button" type="radio" name="Warmer Exhibidor de Comidas Calientes Take Away Vertical WTA800" value="8200" style="margin: 0px;">
+                                <button class="counter-button" onclick="updateCounter(50, 'decrement')">-</button>
+                                <span class="counter-value" style="font-family: poppins;" poppins";"="">0</span>
+                                <button class="counter-button" onclick="updateCounter(50, 'increment')">+</button>
+                            </div>
+                        </div>   
+                    </div>    
+                    <div class="div-boton-agregar">
+                        <button class="boton-consulta" onclick="hacerConsulta(50)">Consultar</button>
+                        <button class="boton-agregar" onclick="agregarAlPedido(50)">Agregar al pedido</button>
+                    </div>
+                </div>
+
+
                 <div class="div-botones-submenu" data-button-number="9">
                     <div class="div-producto">
                         <img class="img-productos" src="./producto-1.png" alt="galleta grasa">
                         <div class="div-parrafos">
-                            <button class="sub-menu-button" data-button-number="9">Warmer Exhibidor de Comidas Calientes <br>Take Away Vertical<br> WTA 800</button>
+                            <button class="sub-menu-button" data-button-number="9">Warmer Exhibidor de Comidas Calientes <br> Take Away Vertical<br> WTA 800</button>
                            <div class="palabra-detalles">
                                 <p onclick="toggleDetalles(9)" class="producto-detalles" style="
                                 width: 117px;
@@ -775,7 +839,7 @@
                     <div class="div-producto">
                         <img class="img-productos" src="./producto-3.png" alt="miñon">
                         <div class="div-parrafos">
-                            <button class="sub-menu-button" data-button-number="11">Heladera Exhibidora Take Away<br>HTA 600</button>
+                            <button class="sub-menu-button" data-button-number="11">Heladera Exhibidora Take Away<br> HTA 600</button>
                            <div class="palabra-detalles">
                                 <p onclick="toggleDetalles(11)" class="producto-detalles" style="
                                 width: 117px;
@@ -815,7 +879,7 @@
                     <div class="div-producto">
                         <img class="img-productos" src="./producto-4.png" alt="miñon">
                         <div class="div-parrafos">
-                            <button class="sub-menu-button" data-button-number="12">Heladera Exhibidora Take Away<br>HTA 900</button>
+                            <button class="sub-menu-button" data-button-number="12">Heladera Exhibidora Take Away <br>HTA 900</button>
                             <div class="palabra-detalles">
                                 <p onclick="toggleDetalles(12)" class="producto-detalles" style="
                                 width: 117px;
@@ -943,7 +1007,7 @@
                     <div class="div-producto">
                         <img class="img-productos" src="./producto-1.png" alt="galleta grasa">
                         <div class="div-parrafos">
-                            <button class="sub-menu-button" data-button-number="14">Mantenedor de Pedidos Calientes Sobremesada<br>MP 800</button>
+                            <button class="sub-menu-button" data-button-number="14">Mantenedor de Pedidos Calientes Sobremesada <br>MP 800</button>
                             <div class="palabra-detalles">
                                 <p onclick="toggleDetalles(14)" class="producto-detalles" style="
                                 width: 117px;
@@ -1070,7 +1134,7 @@
                     <div class="div-producto">
                         <img class="img-productos" src="./producto-1.png" alt="galleta grasa">
                         <div class="div-parrafos">
-                            <button class="sub-menu-button" data-button-number="16">Heladera Bajo Mesada<br>2 Puertas c/motor incorporado<br>HM 1400</button>
+                            <button class="sub-menu-button" data-button-number="16">Heladera Bajo Mesada<br> 2 Puertas c/motor incorporado<br> HM 1400</button>
                             <div class="palabra-detalles">
                                 <p onclick="toggleDetalles(16)" class="producto-detalles" style="
                                 width: 117px;
@@ -1114,7 +1178,7 @@
                     <div class="div-producto">
                         <img class="img-productos" src="./producto-2.png" alt="miñon">
                         <div class="div-parrafos">
-                            <button class="sub-menu-button" data-button-number="17">Heladera Bajo Mesada<br>3 Puertas c/motor incorporado<br>HM 1900</button>
+                            <button class="sub-menu-button" data-button-number="17">Heladera Bajo Mesada <br>3 Puertas c/motor incorporado <br>HM 1900</button>
                            <div class="palabra-detalles">
                                 <p onclick="toggleDetalles(17)" class="producto-detalles" style="
                                 width: 117px;
@@ -1158,7 +1222,7 @@
                     <div class="div-producto">
                         <img class="img-productos" src="./producto-3.png" alt="miñon">
                         <div class="div-parrafos">
-                            <button class="sub-menu-button" data-button-number="18">Heladera Bajo Mesada<br>4 Puertas c/motor incorporado<br>HM 2400</button>
+                            <button class="sub-menu-button" data-button-number="18">Heladera Bajo Mesada <br>4 Puertas c/motor incorporado<br> HM 2400</button>
                             <div class="palabra-detalles">
                                 <p onclick="toggleDetalles(18)" class="producto-detalles" style="
                                 width: 117px;
@@ -1199,7 +1263,7 @@
                     <div class="div-producto">
                         <img class="img-productos" src="./producto-4.png" alt="miñon">
                         <div class="div-parrafos">
-                            <button class="sub-menu-button" data-button-number="19">Heladera Exhibidora de Tortas<br>Cupula Recta<br>HT 1000</button>
+                            <button class="sub-menu-button" data-button-number="19">Heladera Exhibidora de Tortas <br>Cupula Recta <br>HT 1000</button>
                            <div class="palabra-detalles">
                                 <p onclick="toggleDetalles(19)" class="producto-detalles" style="
                                 width: 117px;
@@ -1233,7 +1297,7 @@
                     <div class="div-producto">
                         <img class="img-productos" src="./producto-3.png" alt="miñon">
                         <div class="div-parrafos">
-                            <button class="sub-menu-button" data-button-number="20">Heladera Exhibidora de Tortas<br>Cupula Recta<br>HT 1200</button>
+                            <button class="sub-menu-button" data-button-number="20">Heladera Exhibidora de Tortas<br> Cupula Recta<br> HT 1200</button>
                             <div class="palabra-detalles">
                                 <p onclick="toggleDetalles(20)" class="producto-detalles" style="
                                 width: 117px;
@@ -1268,7 +1332,7 @@
                     <div class="div-producto">
                         <img class="img-productos" src="./producto-3.png" alt="miñon">
                         <div class="div-parrafos">
-                            <button class="sub-menu-button" data-button-number="21">Heladera Exhibidora de Tortas<br>Cupula Recta<br>HT 1500</button>
+                            <button class="sub-menu-button" data-button-number="21">Heladera Exhibidora de Tortas<br> Cupula Recta<br> HT 1500</button>
                             <div class="palabra-detalles">
                                 <p onclick="toggleDetalles(21)" class="producto-detalles" style="
                                 width: 117px;
@@ -1351,7 +1415,7 @@
                     <div class="div-producto">
                         <img class="img-productos" src="./producto-1.png" alt="galleta grasa">
                         <div class="div-parrafos">
-                            <button class="sub-menu-button" data-button-number="22">Warmer Economico<br>Sobremesada - WE400</button>
+                            <button class="sub-menu-button" data-button-number="22">Warmer Economico<br> Sobremesada - WE400</button>
                            <div class="palabra-detalles">
                                 <p onclick="toggleDetalles(22)" class="producto-detalles" style="
                                 width: 117px;
@@ -2033,11 +2097,25 @@
             };
         });
 
+        function prevImage(carouselId) {
+            const carouselImages = document.getElementById(`carousel-images-${carouselId}`);
+            const totalImages = carouselImages.children.length;
+            let currentIndex = carouselImages.dataset.currentIndex ? parseInt(carouselImages.dataset.currentIndex) : 0;
 
+            currentIndex = (currentIndex - 1 + totalImages) % totalImages; // permite el bucle hacia atrás
+            carouselImages.style.transform = `translateX(-${currentIndex * 100}%)`;
+            carouselImages.dataset.currentIndex = currentIndex;
+        }
 
+        function nextImage(carouselId) {
+            const carouselImages = document.getElementById(`carousel-images-${carouselId}`);
+            const totalImages = carouselImages.children.length;
+            let currentIndex = carouselImages.dataset.currentIndex ? parseInt(carouselImages.dataset.currentIndex) : 0;
 
-
-
+            currentIndex = (currentIndex + 1) % totalImages; // permite el bucle hacia adelante
+            carouselImages.style.transform = `translateX(-${currentIndex * 100}%)`;
+            carouselImages.dataset.currentIndex = currentIndex;
+        }
 
 
     </script>
