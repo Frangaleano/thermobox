@@ -73,7 +73,8 @@
                 style="display: none;">Hacer
                 Pedido</button>
 
-            <button id="tuPedidoBtn" class="boton-pedido" style="display: none;" onclick="toggleDropdown()">Tu Pedido
+            <button id="tuPedidoBtn" class="boton-pedido" style="display: none;" onclick="toggleDropdown()">
+                <img src="./carrito-de-compras-removebg-preview.png" alt="carrito">
                 <span id="flecha" class="flecha-abajo"></span>
             </button>
 
@@ -81,6 +82,12 @@
 
 
             <div id="total" class="total">$0.00</div>
+
+            <div class="div-boton-wsp">
+                <a id="ancla-wsp" href="https://wa.link/lkd2gz" target="_blank">
+                    <img class="icono-wsp" src="./whatsapp.webp" alt="icono wsp">
+                </a>
+            </div>
 
             <section id="nosotros">
 
@@ -137,10 +144,6 @@
                     </div>
                 </div>
 
-
-
-
-
                 <div class="carousel-inner" id="hidden">
                     <div class="carousel-item">
                         <img src="./producto-1.png" alt="producto-1">
@@ -160,8 +163,34 @@
                 </div>
 
                 <p class="text-menu">Tu satisfacción, nuestra meta. <br> Ofrecemos equipos comerciales de la más alta
-                    calidad.</p>
+                    calidad, por eso las mejores marcas nos elijen!</p>
             </section>
+
+
+            <section class="section-clientes">
+
+                <div class="carousel-inner-dos" id="hidden">
+                    <div class="carousel-item-dos">
+                        <img src="./clientes/santa-mandioca.jpeg" alt="santa mandioca">
+                        <p class="nombre-cliente">Santa Mandioca</p>
+                    </div>
+                    <div class="carousel-item-dos">
+                        <img src="./clientes/facultad-filosofia.jpeg" alt="facultad filosofia">
+                        <p class="nombre-cliente">Facultad Filosofia y Letras</p>
+                    </div>
+                    <div class="carousel-item-dos">
+                        <img src="./clientes/chacho-panza.jpeg" alt="chacho panza">
+                        <p class="nombre-cliente">Chacho Panza</p>
+                    </div>
+                    <div class="carousel-item-dos">
+                        <img src="./clientes/central-pizzas.jpeg" alt="central de pizzas">
+                        <p class="nombre-cliente">Central de Pizzas</p>
+                    </div>
+                </div>
+
+            </section>
+
+
 
             <section id="section-contacto">
                 <p id="contacto-title"><b>Contacto</b></p>
@@ -232,10 +261,6 @@
                     <img class="iconoFtHome" src="./instagram.svg" alt="instagram">
                 </a>
 
-                <a class="whats" href="https://wa.link/lkd2gz" target="_blank">
-                    <img class="iconoFtHome" src="./whatsapp.svg" alt="whatsapp">
-                </a>
-
                 <a class="linked" href="https://www.tiktok.com/@thermoboxarg" target="_blank">
                     <img class="iconoFtHome" src="./tik-tok.png" style="width: 18px;" alt="facebook">
                 </a>
@@ -247,6 +272,16 @@
     <script>
 
 
+        const carouselInnerdos = document.querySelector('.carousel-inner-dos');
+        const itemsdos = document.querySelectorAll('.carousel-item-dos');
+
+
+        setInterval(() => {
+            currentIndexDos = (currentIndexDos + 1) % itemsdos.length;
+            const translateValuedos = -currentIndexDos * 100 + '%';
+            carouselInnerdos.style.transform = 'translateX(' + translateValuedos + ')';
+        }, 2000);
+
         const carouselInner = document.querySelector('.carousel-inner');
         const items = document.querySelectorAll('.carousel-item');
 
@@ -256,6 +291,7 @@
         let subMenuCuatroVisible = false;
         let subMenuCincoVisible = false;
         let currentIndex = 0;
+        let currentIndexDos = 0;
         let counters = {};
         let productos = [];
         let preciosTotalesProductos = [0];
@@ -336,9 +372,9 @@
 
                         <div class="carousel-container">
                             <div class="carousel-images" id="carousel-images-1">
-                                <img src="producto-1-1.png" alt="Imagen 1" class="carousel-image">
-                                <img src="producto-1-2.png" alt="Imagen 2" class="carousel-image">
-                                <img src="producto-1-3.png" alt="Imagen 3" class="carousel-image">
+                                <img src="./img-pro/.jpeg" alt="Imagen 1" class="carousel-image">
+                                <img src="./img-pro/.jpeg" alt="Imagen 2" class="carousel-image">
+                                <img src="./img-pro/.jpeg" alt="Imagen 3" class="carousel-image">
                             </div>
                             <button class="carousel-button prev" onclick="prevImage(1)">&#10094;</button> <!-- flecha izquierda -->
                             <button class="carousel-button next" onclick="nextImage(1)">&#10095;</button> <!-- flecha derecha -->
@@ -438,7 +474,19 @@
                 
                 <div class="div-botones-submenu" data-button-number="3">
                     <div class="div-producto">
-                        <img class="carousel-image" src="./producto-3.png" alt="miñon">
+
+
+                        <div class="carousel-container">
+                            <div class="carousel-images" id="carousel-images-3">
+                                <img src="./img-pro/WSM-500-5.jpeg" alt="Imagen 1" class="carousel-image">
+                                <img src="./img-pro/WSM-500-6.jpeg" alt="Imagen 2" class="carousel-image">
+                                <img src="./img-pro/WSM-500-7.jpeg" alt="Imagen 3" class="carousel-image">
+                            </div>
+                            <button class="carousel-button prev" onclick="prevImage(3)">&#10094;</button> <!-- flecha izquierda -->
+                            <button class="carousel-button next" onclick="nextImage(3)">&#10095;</button> <!-- flecha derecha -->
+                        </div>
+
+
                         <div class="div-parrafos">
                             <button class="sub-menu-button" data-button-number="3">Warmer Exhibidor <br>Sobremesada - WSM 500</button>
                             <div class="palabra-detalles">
@@ -477,7 +525,18 @@
 
                 <div class="div-botones-submenu" data-button-number="4">
                     <div class="div-producto">
-                        <img class="carousel-image" src="./producto-4.png" alt="miñon">
+
+                        <div class="carousel-container">
+                            <div class="carousel-images" id="carousel-images-4">
+                                <img src="./img-pro/WSM-800-3.png" alt="Imagen 1" class="carousel-image">
+                                <img src="./img-pro/WSM-800-2.jpeg" alt="Imagen 2" class="carousel-image">
+                                <img src="./img-pro/WSM-800-6.jpeg" alt="Imagen 3" class="carousel-image">
+                            </div>
+                            <button class="carousel-button prev" onclick="prevImage(4)">&#10094;</button> <!-- flecha izquierda -->
+                            <button class="carousel-button next" onclick="nextImage(4)">&#10095;</button> <!-- flecha derecha -->
+                        </div>
+
+
                         <div class="div-parrafos">
                             <button class="sub-menu-button" data-button-number="4">Warmer Exhibidor<br> Sobremesada - WSM 800</button>
                             <div class="palabra-detalles">
@@ -516,7 +575,18 @@
 
                 <div class="div-botones-submenu" data-button-number="5">
                     <div class="div-producto">
-                        <img class="carousel-image" src="./producto-3.png" alt="miñon">
+
+                        <div class="carousel-container">
+                            <div class="carousel-images" id="carousel-images-5">
+                                <img src="./img-pro/WSM-1200-2.jpeg" alt="Imagen 1" class="carousel-image">
+                                <img src="./img-pro/WSM-1200-6.jpeg" alt="Imagen 2" class="carousel-image">
+                                <img src="./img-pro/WSM-1200-7.jpeg" alt="Imagen 3" class="carousel-image">
+                            </div>
+                            <button class="carousel-button prev" onclick="prevImage(5)">&#10094;</button> <!-- flecha izquierda -->
+                            <button class="carousel-button next" onclick="nextImage(5)">&#10095;</button> <!-- flecha derecha -->
+                        </div>
+
+
                         <div class="div-parrafos">
                             <button class="sub-menu-button" data-button-number="5">Warmer Exhibidor<br> Sobremesada - WSM 1200</button>
                             <div class="palabra-detalles">
@@ -556,7 +626,18 @@
 
                 <div class="div-botones-submenu" data-button-number="6">
                     <div class="div-producto">
-                        <img class="carousel-image" src="./producto-3.png" alt="miñon">
+
+                        <div class="carousel-container">
+                            <div class="carousel-images" id="carousel-images-6">
+                                <img src="./img-pro/ME-1200.jpeg" alt="Imagen 1" class="carousel-image">
+                                <img src="./img-pro/" alt="Imagen 2" class="carousel-image">
+                                <img src="./img-pro/" alt="Imagen 3" class="carousel-image">
+                            </div>
+                            <button class="carousel-button prev" onclick="prevImage(6)">&#10094;</button> <!-- flecha izquierda -->
+                            <button class="carousel-button next" onclick="nextImage(6)">&#10095;</button> <!-- flecha derecha -->
+                        </div>
+
+
                         <div class="div-parrafos">
                             <button class="sub-menu-button" data-button-number="6">Mantenedor<br> Exhibidor de Empanadas Calientes<br> ME 1200</button>
                             <div class="palabra-detalles">
@@ -568,16 +649,14 @@
                             </div>
                             <div class="detalles" data-button-number="6">
                             <ul style="line-height:120%">
-                            <li><b>Medidas</b>: 1200mm de Frente x 600mm de Fondo x 650mm de Altura.</li>
-                            <li>Construido Gabinete totalmente en Ac Inoxidable 430 esmerilado.</li>
-                            <li>Cúpula y Estante de vidrio templado de 6mm de espesor.</li>
-                            <li>Dos niveles de Exhibicion.</li>
-                            <li>Piso y estante calefaccionados por medio de lámparas halogenas de 150watts c/u.</li>
-                            <li>Dos circuitos de iluminación con interruptor independiente.</li> 
-                            <li>Provisto de Dimmer Regulador de Temperatura.</li>
-                            <li>Alimentación 220 volts, Consumo aproximado máximo 6 amperes.</li> 
+                            <li><b>Medidas</b>: 120cm de frente x 60cm de fondo x 65cm de altura.</li>
+                            <li>Construido; Gabinete de ac inoxidable esmerilado, Cúpula de vidrio de 8mm de espesor. </li>
+                            <li>luminación y calefaccion por medio de 3 lamparas infrarrojas de 250watts c/u.</li>
+                            <li>distribuidas en dos circuitos con interruptores independientes. </li>
+                            <li>Batea provista de guías separadoras desmontables de ac inoxidable. </li>
                             </ul>
                             </div>
+
                             <div class="div-detalles">
                                 <p>$7200</p>
                                 <input class="radio-button" type="radio" name="Mantenedor Exhibidor Empanadas Calientes ME1200" value="7200" style="margin: 0px;">
@@ -596,7 +675,18 @@
 
                 <div class="div-botones-submenu" data-button-number="7">
                     <div class="div-producto">
-                        <img class="carousel-image" src="./producto-3.png" alt="miñon">
+
+                        <div class="carousel-container">
+                            <div class="carousel-images" id="carousel-images-7">
+                                <img src="./img-pro/ME-1800.jpeg" alt="Imagen 1" class="carousel-image">
+                                <img src="./img-pro/ME-1800-2.jpeg" alt="Imagen 2" class="carousel-image">
+                                <img src="./img-pro/ME-1800-6.jpeg" alt="Imagen 3" class="carousel-image">
+                            </div>
+                            <button class="carousel-button prev" onclick="prevImage(7)">&#10094;</button> <!-- flecha izquierda -->
+                            <button class="carousel-button next" onclick="nextImage(7)">&#10095;</button> <!-- flecha derecha -->
+                        </div>
+
+
                         <div class="div-parrafos">
                             <button class="sub-menu-button" data-button-number="7">Mantenedor<br> Exhibidor de Empanadas Calientes<br> ME 1800</button>
                             <div class="palabra-detalles">
@@ -608,11 +698,14 @@
                             </div>
                             <div class="detalles" data-button-number="7">
                             <ul style="line-height:120%">
-                                <li><b>Medidas</b>: 20cm Ancho, 15cm Alto & 30cm Profundidad.</li>
-                                <li><b>Materiales</b>:</li>
-                                <li><b>Temperatura</b>:</li>
+                                <li><b>Medidas</b>: 180cm de frente x 60cm de fondo x 65cm de altura</li>
+                            <li>Construido; Gabinete de ac inoxidable esmerilado, Cúpula de vidrio de 8mm de espesor. </li>
+                            <li>luminación y calefaccion por medio de 5 lamparas infrarrojas de 250watts c/u.</li>
+                            <li>distribuidas en dos circuitos con interruptores independientes. </li>
+                            <li>Batea provista de guías separadoras desmontables de ac inoxidable. </li>
                             </ul>
                             </div>
+
                             <div class="div-detalles">
                                 <p>$7200</p>
                                 <input class="radio-button" type="radio" name="Mantenedor Exhibidor Empanadas Calientes ME1800" value="7200" style="margin: 0px;">
@@ -631,7 +724,17 @@
 
                 <div class="div-botones-submenu" data-button-number="8">
                     <div class="div-producto">
-                        <img class="carousel-image" src="./producto-3.png" alt="miñon">
+                        <div class="carousel-container">
+                            <div class="carousel-images" id="carousel-images-8">
+                                <img src="./img-pro/.jpeg" alt="Imagen 1" class="carousel-image">
+                                <img src="./img-pro/.jpeg" alt="Imagen 2" class="carousel-image">
+                                <img src="./img-pro/.jpeg" alt="Imagen 3" class="carousel-image">
+                            </div>
+                            <button class="carousel-button prev" onclick="prevImage(8)">&#10094;</button> <!-- flecha izquierda -->
+                            <button class="carousel-button next" onclick="nextImage(8)">&#10095;</button> <!-- flecha derecha -->
+                        </div>
+
+
                         <div class="div-parrafos">
                             <button class="sub-menu-button" data-button-number="8">Mantenedor<br> Exhibidor de Empanadas Calientes<br> ME 2400</button>
                             <div class="palabra-detalles">
@@ -643,9 +746,11 @@
                             </div>
                             <div class="detalles" data-button-number="8">
                             <ul style="line-height:120%">
-                                <li><b>Medidas</b>: 20cm Ancho, 15cm Alto & 30cm Profundidad.</li>
-                                <li><b>Materiales</b>:</li>
-                                <li><b>Temperatura</b>:</li>
+                                <li><b>Medidas</b>: 240cm de frente x 60cm de fondo x 65cm de altura.</li>
+                            <li>Construido; Gabinete de ac inoxidable esmerilado, Cúpula de vidrio de 8mm de espesor. </li>
+                            <li>luminación y calefaccion por medio de 6 lamparas infrarrojas de 250watts c/u.</li>
+                            <li>distribuidas en dos circuitos con interruptores independientes. </li>
+                            <li>Batea provista de guías separadoras desmontables de ac inoxidable. </li>
                             </ul>
                             </div>
                             <div class="div-detalles">
@@ -713,7 +818,15 @@
                 const buttonsHTML = `
                 <div class="div-botones-submenu" data-button-number="50">
                     <div class="div-producto">
-                        <img class="img-productos" src="./producto-1.png" alt="galleta grasa">
+                        <div class="carousel-container">
+                            <div class="carousel-images" id="carousel-images-50">
+                                <img src="./img-pro/WTA-600.jpeg" alt="Imagen 1" class="carousel-image">
+                                <img src="./img-pro/WTA-600-2.jpeg" alt="Imagen 2" class="carousel-image">
+                                <img src="./img-pro/WTA-600-3.jpeg" alt="Imagen 3" class="carousel-image">
+                            </div>
+                            <button class="carousel-button prev" onclick="prevImage(50)">&#10094;</button> <!-- flecha izquierda -->
+                            <button class="carousel-button next" onclick="nextImage(50)">&#10095;</button> <!-- flecha derecha -->
+                        </div>
                         <div class="div-parrafos">
                             <button class="sub-menu-button" data-button-number="9">Warmer Exhibidor de Comidas Calientes <br> Take Away Vertical<br> WTA 600</button>
                            <div class="palabra-detalles">
@@ -753,7 +866,18 @@
 
                 <div class="div-botones-submenu" data-button-number="9">
                     <div class="div-producto">
-                        <img class="img-productos" src="./producto-1.png" alt="galleta grasa">
+
+                        <div class="carousel-container">
+                            <div class="carousel-images" id="carousel-images-9">
+                                <img src="./img-pro/WTA-800.jpeg" alt="Imagen 1" class="carousel-image">
+                                <img src="./img-pro/WTA-800-2.jpeg" alt="Imagen 2" class="carousel-image">
+                                <img src="./img-pro/WTA-800-3.jpeg" alt="Imagen 3" class="carousel-image">
+                            </div>
+                            <button class="carousel-button prev" onclick="prevImage(9)">&#10094;</button> <!-- flecha izquierda -->
+                            <button class="carousel-button next" onclick="nextImage(9)">&#10095;</button> <!-- flecha derecha -->
+                        </div>
+
+
                         <div class="div-parrafos">
                             <button class="sub-menu-button" data-button-number="9">Warmer Exhibidor de Comidas Calientes <br> Take Away Vertical<br> WTA 800</button>
                            <div class="palabra-detalles">
@@ -795,7 +919,18 @@
 
                 <div class="div-botones-submenu" data-button-number="10">
                     <div class="div-producto">
-                        <img class="img-productos" src="./producto-2.png" alt="miñon">
+
+                        <div class="carousel-container">
+                            <div class="carousel-images" id="carousel-images-10">
+                                <img src="./img-pro/WTA-1200-3.jpeg" alt="Imagen 1" class="carousel-image">
+                                <img src="./img-pro/WTA-1200-4.jpeg" alt="Imagen 2" class="carousel-image">
+                                <img src="./img-pro/WTA-1200-5.jpeg" alt="Imagen 3" class="carousel-image">
+                            </div>
+                            <button class="carousel-button prev" onclick="prevImage(10)">&#10094;</button> <!-- flecha izquierda -->
+                            <button class="carousel-button next" onclick="nextImage(10)">&#10095;</button> <!-- flecha derecha -->
+                        </div>
+
+
                         <div class="div-parrafos">
                             <button class="sub-menu-button" data-button-number="10">Warmer Exhibidor de Comidas Calientes<br> Take Away Vertical<br> WTA 1200</button>
                             <div class="palabra-detalles">
@@ -837,7 +972,18 @@
                 
                 <div class="div-botones-submenu" data-button-number="11">
                     <div class="div-producto">
-                        <img class="img-productos" src="./producto-3.png" alt="miñon">
+
+                        <div class="carousel-container">
+                            <div class="carousel-images" id="carousel-images-11">
+                                <img src="./img-pro/HTA-600.jpeg" alt="Imagen 1" class="carousel-image">
+                                <img src="./img-pro/HTA-600-2.jpeg" alt="Imagen 2" class="carousel-image">
+                                <img src="./img-pro/.jpeg" alt="Imagen 3" class="carousel-image">
+                            </div>
+                            <button class="carousel-button prev" onclick="prevImage(11)">&#10094;</button> <!-- flecha izquierda -->
+                            <button class="carousel-button next" onclick="nextImage(11)">&#10095;</button> <!-- flecha derecha -->
+                        </div>
+
+
                         <div class="div-parrafos">
                             <button class="sub-menu-button" data-button-number="11">Heladera Exhibidora Take Away<br> HTA 600</button>
                            <div class="palabra-detalles">
@@ -877,7 +1023,16 @@
 
                 <div class="div-botones-submenu" data-button-number="12">
                     <div class="div-producto">
-                        <img class="img-productos" src="./producto-4.png" alt="miñon">
+
+                        <div class="carousel-container">
+                            <div class="carousel-images" id="carousel-images-12">
+                                <img src="./img-pro/HTA-900.jpeg" alt="Imagen 1" class="carousel-image">
+                                <img src="./img-pro/HTA-900-2.jpeg" alt="Imagen 2" class="carousel-image">
+                                <img src="./img-pro/HTA-900-3.jpeg" alt="Imagen 3" class="carousel-image">
+                            </div>
+                            <button class="carousel-button prev" onclick="prevImage(12)">&#10094;</button> <!-- flecha izquierda -->
+                            <button class="carousel-button next" onclick="nextImage(12)">&#10095;</button> <!-- flecha derecha -->
+                        </div>
                         <div class="div-parrafos">
                             <button class="sub-menu-button" data-button-number="12">Heladera Exhibidora Take Away <br>HTA 900</button>
                             <div class="palabra-detalles">
@@ -917,7 +1072,19 @@
 
                 <div class="div-botones-submenu" data-button-number="13">
                     <div class="div-producto">
-                        <img class="img-productos" src="./producto-3.png" alt="miñon">
+
+
+                        <div class="carousel-container">
+                            <div class="carousel-images" id="carousel-images-13">
+                                <img src="./img-pro/HTA-1200-7.jpeg" alt="Imagen 1" class="carousel-image">
+                                <img src="./img-pro/HTA-1200-10.jpeg" alt="Imagen 2" class="carousel-image">
+                                <img src="./img-pro/HTA-1200-11.jpeg" alt="Imagen 3" class="carousel-image">
+                            </div>
+                            <button class="carousel-button prev" onclick="prevImage(13)">&#10094;</button> <!-- flecha izquierda -->
+                            <button class="carousel-button next" onclick="nextImage(13)">&#10095;</button> <!-- flecha derecha -->
+                        </div>
+
+
                         <div class="div-parrafos">
                             <button class="sub-menu-button" data-button-number="13">Heladera Exhibidora Take Away<br> HTA 1200</button>
                             <div class="palabra-detalles">
@@ -1005,9 +1172,20 @@
                 const buttonsHTML = `
                 <div class="div-botones-submenu" data-button-number="14">
                     <div class="div-producto">
-                        <img class="img-productos" src="./producto-1.png" alt="galleta grasa">
+
+                        <div class="carousel-container">
+                            <div class="carousel-images" id="carousel-images-14">
+                                <img src="./img-pro/MPC-800-3.jpeg" alt="Imagen 1" class="carousel-image">
+                                <img src="./img-pro/MPC-800-6.jpeg" alt="Imagen 2" class="carousel-image">
+                                <img src="./img-pro/MPC-800-9.jpeg" alt="Imagen 3" class="carousel-image">
+                            </div>
+                            <button class="carousel-button prev" onclick="prevImage(14)">&#10094;</button> <!-- flecha izquierda -->
+                            <button class="carousel-button next" onclick="nextImage(14)">&#10095;</button> <!-- flecha derecha -->
+                        </div>
+
+
                         <div class="div-parrafos">
-                            <button class="sub-menu-button" data-button-number="14">Mantenedor de Pedidos Calientes Sobremesada <br>MP 800</button>
+                            <button class="sub-menu-button" data-button-number="14">Mantenedor de Pedidos Calientes Sobremesada <br>MPC 800</button>
                             <div class="palabra-detalles">
                                 <p onclick="toggleDetalles(14)" class="producto-detalles" style="
                                 width: 117px;
@@ -1045,7 +1223,18 @@
 
                 <div class="div-botones-submenu" data-button-number="15">
                     <div class="div-producto">
-                        <img class="img-productos" src="./producto-2.png" alt="miñon">
+
+                        <div class="carousel-container">
+                            <div class="carousel-images" id="carousel-images-15">
+                                <img src="./img-pro/MPV-600.jpeg" alt="Imagen 1" class="carousel-image">
+                                <img src="./img-pro/MPV-600-3.jpeg" alt="Imagen 2" class="carousel-image">
+                                <img src="./img-pro/MPV-600-4.jpeg" alt="Imagen 3" class="carousel-image">
+                            </div>
+                            <button class="carousel-button prev" onclick="prevImage(15)">&#10094;</button> <!-- flecha izquierda -->
+                            <button class="carousel-button next" onclick="nextImage(15)">&#10095;</button> <!-- flecha derecha -->
+                        </div>
+
+
                         <div class="div-parrafos">
                             <button class="sub-menu-button" data-button-number="15">Mantenedor de Pedidos Calientes Vertical<br> MPV 600</button>
                             <div class="palabra-detalles">
@@ -1132,9 +1321,20 @@
                 const buttonsHTML = `
                 <div class="div-botones-submenu" data-button-number="16">
                     <div class="div-producto">
-                        <img class="img-productos" src="./producto-1.png" alt="galleta grasa">
+
+                        <div class="carousel-container">
+                            <div class="carousel-images" id="carousel-images-16">
+                                <img src="./img-pro/HM2P.jpeg" alt="Imagen 1" class="carousel-image">
+                                <img src="./img-pro/HM2P-2.jpeg" alt="Imagen 2" class="carousel-image">
+                                <img src="./img-pro/HM2P-3.jpeg" alt="Imagen 3" class="carousel-image">
+                            </div>
+                            <button class="carousel-button prev" onclick="prevImage(16)">&#10094;</button> <!-- flecha izquierda -->
+                            <button class="carousel-button next" onclick="nextImage(16)">&#10095;</button> <!-- flecha derecha -->
+                        </div>
+
+
                         <div class="div-parrafos">
-                            <button class="sub-menu-button" data-button-number="16">Heladera Bajo Mesada<br> 2 Puertas c/motor incorporado<br> HM 1400</button>
+                            <button class="sub-menu-button" data-button-number="16">Heladera Bajo Mesada<br> 2 Puertas c/motor incorporado<br> HM2P</button>
                             <div class="palabra-detalles">
                                 <p onclick="toggleDetalles(16)" class="producto-detalles" style="
                                 width: 117px;
@@ -1176,7 +1376,19 @@
 
                 <div class="div-botones-submenu" data-button-number="17">
                     <div class="div-producto">
-                        <img class="img-productos" src="./producto-2.png" alt="miñon">
+
+
+
+                        <div class="carousel-container">
+                            <div class="carousel-images" id="carousel-images-17">
+                                <img src="./img-pro/HM3P.jpeg" alt="Imagen 1" class="carousel-image">
+                                <img src="./img-pro/HM3P-5.jpeg" alt="Imagen 2" class="carousel-image">
+                                <img src="./img-pro/HM3P-6.jpeg" alt="Imagen 3" class="carousel-image">
+                            </div>
+                            <button class="carousel-button prev" onclick="prevImage(17)">&#10094;</button> <!-- flecha izquierda -->
+                            <button class="carousel-button next" onclick="nextImage(17)">&#10095;</button> <!-- flecha derecha -->
+                        </div>
+
                         <div class="div-parrafos">
                             <button class="sub-menu-button" data-button-number="17">Heladera Bajo Mesada <br>3 Puertas c/motor incorporado <br>HM 1900</button>
                            <div class="palabra-detalles">
@@ -1220,7 +1432,18 @@
                 
                 <div class="div-botones-submenu" data-button-number="18">
                     <div class="div-producto">
-                        <img class="img-productos" src="./producto-3.png" alt="miñon">
+
+                        <div class="carousel-container">
+                            <div class="carousel-images" id="carousel-images-18">
+                                <img src="./img-pro/HM4P.jpeg" alt="Imagen 1" class="carousel-image">
+                                <img src="./img-pro/HM4P-6.jpeg" alt="Imagen 2" class="carousel-image">
+                                <img src="./img-pro/HM4P-7.jpeg" alt="Imagen 3" class="carousel-image">
+                            </div>
+                            <button class="carousel-button prev" onclick="prevImage(18)">&#10094;</button> <!-- flecha izquierda -->
+                            <button class="carousel-button next" onclick="nextImage(18)">&#10095;</button> <!-- flecha derecha -->
+                        </div>
+
+
                         <div class="div-parrafos">
                             <button class="sub-menu-button" data-button-number="18">Heladera Bajo Mesada <br>4 Puertas c/motor incorporado<br> HM 2400</button>
                             <div class="palabra-detalles">
@@ -1261,7 +1484,18 @@
 
                 <div class="div-botones-submenu" data-button-number="19">
                     <div class="div-producto">
-                        <img class="img-productos" src="./producto-4.png" alt="miñon">
+
+
+                        <div class="carousel-container">
+                            <div class="carousel-images" id="carousel-images-19">
+                                <img src="producto-1-1.png" alt="Imagen 1" class="carousel-image">
+                                <img src="producto-1-2.png" alt="Imagen 2" class="carousel-image">
+                                <img src="producto-1-3.png" alt="Imagen 3" class="carousel-image">
+                            </div>
+                            <button class="carousel-button prev" onclick="prevImage(19)">&#10094;</button> <!-- flecha izquierda -->
+                            <button class="carousel-button next" onclick="nextImage(19)">&#10095;</button> <!-- flecha derecha -->
+                        </div>
+
                         <div class="div-parrafos">
                             <button class="sub-menu-button" data-button-number="19">Heladera Exhibidora de Tortas <br>Cupula Recta <br>HT 1000</button>
                            <div class="palabra-detalles">
@@ -1295,7 +1529,18 @@
 
                 <div class="div-botones-submenu" data-button-number="20">
                     <div class="div-producto">
-                        <img class="img-productos" src="./producto-3.png" alt="miñon">
+
+                        <div class="carousel-container">
+                            <div class="carousel-images" id="carousel-images-20">
+                                <img src="producto-1-1.png" alt="Imagen 1" class="carousel-image">
+                                <img src="producto-1-2.png" alt="Imagen 2" class="carousel-image">
+                                <img src="producto-1-3.png" alt="Imagen 3" class="carousel-image">
+                            </div>
+                            <button class="carousel-button prev" onclick="prevImage(20)">&#10094;</button> <!-- flecha izquierda -->
+                            <button class="carousel-button next" onclick="nextImage(20)">&#10095;</button> <!-- flecha derecha -->
+                        </div>
+
+
                         <div class="div-parrafos">
                             <button class="sub-menu-button" data-button-number="20">Heladera Exhibidora de Tortas<br> Cupula Recta<br> HT 1200</button>
                             <div class="palabra-detalles">
@@ -1330,7 +1575,18 @@
 
                 <div class="div-botones-submenu" data-button-number="21">
                     <div class="div-producto">
-                        <img class="img-productos" src="./producto-3.png" alt="miñon">
+
+                        <div class="carousel-container">
+                            <div class="carousel-images" id="carousel-images-21">
+                                <img src="producto-1-1.png" alt="Imagen 1" class="carousel-image">
+                                <img src="producto-1-2.png" alt="Imagen 2" class="carousel-image">
+                                <img src="producto-1-3.png" alt="Imagen 3" class="carousel-image">
+                            </div>
+                            <button class="carousel-button prev" onclick="prevImage(21)">&#10094;</button> <!-- flecha izquierda -->
+                            <button class="carousel-button next" onclick="nextImage(21)">&#10095;</button> <!-- flecha derecha -->
+                        </div>
+
+
                         <div class="div-parrafos">
                             <button class="sub-menu-button" data-button-number="21">Heladera Exhibidora de Tortas<br> Cupula Recta<br> HT 1500</button>
                             <div class="palabra-detalles">
@@ -1413,7 +1669,16 @@
                 const buttonsHTML = `
                 <div class="div-botones-submenu" data-button-number="22">
                     <div class="div-producto">
-                        <img class="img-productos" src="./producto-1.png" alt="galleta grasa">
+
+                        <div class="carousel-container">
+                            <div class="carousel-images" id="carousel-images-22">
+                                <img src="producto-1-1.png" alt="Imagen 1" class="carousel-image">
+                                <img src="producto-1-2.png" alt="Imagen 2" class="carousel-image">
+                                <img src="producto-1-3.png" alt="Imagen 3" class="carousel-image">
+                            </div>
+                            <button class="carousel-button prev" onclick="prevImage(22)">&#10094;</button> <!-- flecha izquierda -->
+                            <button class="carousel-button next" onclick="nextImage(22)">&#10095;</button> <!-- flecha derecha -->
+                        </div>
                         <div class="div-parrafos">
                             <button class="sub-menu-button" data-button-number="22">Warmer Economico<br> Sobremesada - WE400</button>
                            <div class="palabra-detalles">
@@ -1462,7 +1727,17 @@
 
                 <div class="div-botones-submenu" data-button-number="23">
                     <div class="div-producto">
-                        <img class="img-productos" src="./producto-2.png" alt="miñon">
+
+                        <div class="carousel-container">
+                            <div class="carousel-images" id="carousel-images-23">
+                                <img src="producto-1-1.png" alt="Imagen 1" class="carousel-image">
+                                <img src="producto-1-2.png" alt="Imagen 2" class="carousel-image">
+                                <img src="producto-1-3.png" alt="Imagen 3" class="carousel-image">
+                            </div>
+                            <button class="carousel-button prev" onclick="prevImage(23)">&#10094;</button> <!-- flecha izquierda -->
+                            <button class="carousel-button next" onclick="nextImage(23)">&#10095;</button> <!-- flecha derecha -->
+                        </div>
+
                         <div class="div-parrafos">
                             <button class="sub-menu-button" data-button-number="23">Warmer Economico<br>Sobremesada - WE600</button>
                            <div class="palabra-detalles">
@@ -1499,7 +1774,18 @@
                 
                 <div class="div-botones-submenu" data-button-number="24">
                     <div class="div-producto">
-                        <img class="img-productos" src="./producto-3.png" alt="miñon">
+
+
+                        <div class="carousel-container">
+                            <div class="carousel-images" id="carousel-images-24">
+                                <img src="producto-1-1.png" alt="Imagen 1" class="carousel-image">
+                                <img src="producto-1-2.png" alt="Imagen 2" class="carousel-image">
+                                <img src="producto-1-3.png" alt="Imagen 3" class="carousel-image">
+                            </div>
+                            <button class="carousel-button prev" onclick="prevImage(24)">&#10094;</button> <!-- flecha izquierda -->
+                            <button class="carousel-button next" onclick="nextImage(24)">&#10095;</button> <!-- flecha derecha -->
+                        </div>
+
                         <div class="div-parrafos">
                             <button class="sub-menu-button" data-button-number="24">Warmer Exhibidor <br>Sobremesada - WSM500</button>
                             <div class="palabra-detalles">
@@ -1538,7 +1824,18 @@
 
                 <div class="div-botones-submenu" data-button-number="25">
                     <div class="div-producto">
-                        <img class="img-productos" src="./producto-4.png" alt="miñon">
+
+
+                        <div class="carousel-container">
+                            <div class="carousel-images" id="carousel-images-25">
+                                <img src="producto-1-1.png" alt="Imagen 1" class="carousel-image">
+                                <img src="producto-1-2.png" alt="Imagen 2" class="carousel-image">
+                                <img src="producto-1-3.png" alt="Imagen 3" class="carousel-image">
+                            </div>
+                            <button class="carousel-button prev" onclick="prevImage(25)">&#10094;</button> <!-- flecha izquierda -->
+                            <button class="carousel-button next" onclick="nextImage(25)">&#10095;</button> <!-- flecha derecha -->
+                        </div>
+
                         <div class="div-parrafos">
                             <button class="sub-menu-button" data-button-number="25">Warmer Exhibidor<br>Sobremesada - WSM800</button>
                             <div class="palabra-detalles">
@@ -1577,7 +1874,18 @@
 
                 <div class="div-botones-submenu" data-button-number="26">
                     <div class="div-producto">
-                        <img class="img-productos" src="./producto-3.png" alt="miñon">
+
+
+                        <div class="carousel-container">
+                            <div class="carousel-images" id="carousel-images-26">
+                                <img src="producto-1-1.png" alt="Imagen 1" class="carousel-image">
+                                <img src="producto-1-2.png" alt="Imagen 2" class="carousel-image">
+                                <img src="producto-1-3.png" alt="Imagen 3" class="carousel-image">
+                            </div>
+                            <button class="carousel-button prev" onclick="prevImage(26)">&#10094;</button> <!-- flecha izquierda -->
+                            <button class="carousel-button next" onclick="nextImage(26)">&#10095;</button> <!-- flecha derecha -->
+                        </div>
+
                         <div class="div-parrafos">
                             <button class="sub-menu-button" data-button-number="26">Warmer Exhibidor<br>Sobremesada - WSM1200</button>
                             <div class="palabra-detalles">
@@ -1617,7 +1925,18 @@
 
                 <div class="div-botones-submenu" data-button-number="27">
                     <div class="div-producto">
-                        <img class="img-productos" src="./producto-3.png" alt="miñon">
+
+                        <div class="carousel-container">
+                            <div class="carousel-images" id="carousel-images-27">
+                                <img src="./img-pro/ME-1200.jpeg" alt="Imagen 1" class="carousel-image">
+                                <img src="./img-pro/" alt="Imagen 2" class="carousel-image">
+                                <img src="./img-pro/" alt="Imagen 3" class="carousel-image">
+                            </div>
+                            <button class="carousel-button prev" onclick="prevImage(27)">&#10094;</button> <!-- flecha izquierda -->
+                            <button class="carousel-button next" onclick="nextImage(27)">&#10095;</button> <!-- flecha derecha -->
+                        </div>
+
+
                         <div class="div-parrafos">
                             <button class="sub-menu-button" data-button-number="27">Mantenedor<br>Exhibidor de Empanadas Calientes<br>ME1200</button>
                             <p class="producto-detalles" style="
@@ -1647,7 +1966,19 @@
 
                 <div class="div-botones-submenu" data-button-number="28">
                     <div class="div-producto">
-                        <img class="img-productos" src="./producto-3.png" alt="miñon">
+
+                        <div class="carousel-container">
+                            <div class="carousel-images" id="carousel-images-28">
+                                <img src="producto-1-1.png" alt="Imagen 1" class="carousel-image">
+                                <img src="producto-1-2.png" alt="Imagen 2" class="carousel-image">
+                                <img src="producto-1-3.png" alt="Imagen 3" class="carousel-image">
+                            </div>
+                            <button class="carousel-button prev" onclick="prevImage(28)">&#10094;</button> <!-- flecha izquierda -->
+                            <button class="carousel-button next" onclick="nextImage(28)">&#10095;</button> <!-- flecha derecha -->
+                        </div>
+
+
+
                         <div class="div-parrafos">
                             <button class="sub-menu-button" data-button-number="28">Mantenedor<br>Exhibidor de Empanadas Calientes<br>ME1800</button>
                            <div class="palabra-detalles">
@@ -1682,7 +2013,18 @@
 
                 <div class="div-botones-submenu" data-button-number="29">
                     <div class="div-producto">
-                        <img class="img-productos" src="./producto-3.png" alt="miñon">
+
+                        <div class="carousel-container">
+                            <div class="carousel-images" id="carousel-images-29">
+                                <img src="producto-1-1.png" alt="Imagen 1" class="carousel-image">
+                                <img src="producto-1-2.png" alt="Imagen 2" class="carousel-image">
+                                <img src="producto-1-3.png" alt="Imagen 3" class="carousel-image">
+                            </div>
+                            <button class="carousel-button prev" onclick="prevImage(29)">&#10094;</button> <!-- flecha izquierda -->
+                            <button class="carousel-button next" onclick="nextImage(29)">&#10095;</button> <!-- flecha derecha -->
+                        </div>
+
+
                         <div class="div-parrafos">
                             <button class="sub-menu-button" data-button-number="29">Mantenedor<br>Exhibidor de Empanadas Calientes<br>ME2400</button>
                             <div class="palabra-detalles">
