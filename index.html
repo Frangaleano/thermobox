@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <title>ThermoBox</title>
-    <link rel="shortcut icon" href="./logo-tb.png">
+    <link rel="shortcut icon" href="./logo-tb.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -14,6 +14,12 @@
 </head>
 
 <body>
+
+    <div class="intro-overlay">
+        <div class="logo-container">
+            <img src="./logo-fondoblanco-removebg-preview.png" alt="logo" class="logo">
+        </div>
+    </div>
 
     <div class="gridHome">
 
@@ -268,6 +274,16 @@
     </div>
 
     <script>
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    const introOverlay = document.querySelector('.intro-overlay');
+                    introOverlay.classList.add('hidden');
+                    document.body.style.overflow = 'auto'; // Permite el desplazamiento después de la animación
+                }, 2300);
+            });
+        </script>
+
+    <script>
 
 
         const carouselInnerdos = document.querySelector('.carousel-inner-dos');
@@ -296,6 +312,7 @@
         let selectedItems = [];
         let total = 0;
         let totalProductos = 0;
+
 
 
         setInterval(() => {
@@ -370,9 +387,18 @@
 
                         <div class="carousel-container">
                             <div class="carousel-images" id="carousel-images-1">
-                                <img src="./img-pro/.jpeg" alt="Imagen 1" class="carousel-image">
-                                <img src="./img-pro/.jpeg" alt="Imagen 2" class="carousel-image">
-                                <img src="./img-pro/.jpeg" alt="Imagen 3" class="carousel-image">
+                                <img src="./img-pro/WESM-400-1.jpeg" alt="Imagen 1" class="carousel-image"
+                                style="width: 200px;
+                                margin-left: 51px;
+                                height: 250px;">
+                                <img src="./img-pro/WESM-400-2.jpeg" alt="Imagen 2" class="carousel-image"
+                                style="width: 200px;
+                                margin-left: 99px;
+                                height: 250px;">
+                                <img src="./img-pro/WESM-400-3.jpeg" alt="Imagen 3" class="carousel-image"
+                                style="width: 200px;
+                                margin-left: 99px;
+                                height: 250px;">
                             </div>
                             <button class="carousel-button prev" onclick="prevImage(1)">&#10094;</button> <!-- flecha izquierda -->
                             <button class="carousel-button next" onclick="nextImage(1)">&#10095;</button> <!-- flecha derecha -->
@@ -627,9 +653,14 @@
 
                         <div class="carousel-container">
                             <div class="carousel-images" id="carousel-images-6">
-                                <img src="./img-pro/ME-1200.jpeg" alt="Imagen 1" class="carousel-image">
-                                <img src="./img-pro/" alt="Imagen 2" class="carousel-image">
-                                <img src="./img-pro/" alt="Imagen 3" class="carousel-image">
+                                <img src="./img-pro/ME-1200-1.jpeg" alt="Imagen 1" class="carousel-image"
+                                style="width: 200px;
+                                    margin-left: 51px;
+                                    height: 250px;">
+                                <img src="./img-pro/ME-1200-2.jpeg" alt="Imagen 2" class="carousel-image"
+                                style="width: 200px;
+                                    margin-left: 99px;
+                                    height: 250px;">
                             </div>
                             <button class="carousel-button prev" onclick="prevImage(6)">&#10094;</button> <!-- flecha izquierda -->
                             <button class="carousel-button next" onclick="nextImage(6)">&#10095;</button> <!-- flecha derecha -->
@@ -724,9 +755,14 @@
                     <div class="div-producto">
                         <div class="carousel-container">
                             <div class="carousel-images" id="carousel-images-8">
-                                <img src="./img-pro/.jpeg" alt="Imagen 1" class="carousel-image">
-                                <img src="./img-pro/.jpeg" alt="Imagen 2" class="carousel-image">
-                                <img src="./img-pro/.jpeg" alt="Imagen 3" class="carousel-image">
+                                <img src="./img-pro/ME-2400.jpeg" alt="Imagen 1" class="carousel-image"
+                                style="width: 200px;
+                                  margin-left: 51px;
+                                  height: 250px;">
+                                <img src="./img-pro/ME-1200-1.jpeg" alt="Imagen 2" class="carousel-image"
+                                style="width: 200px;
+                                  margin-left: 99px;
+                                  height: 250px;">
                             </div>
                             <button class="carousel-button prev" onclick="prevImage(8)">&#10094;</button> <!-- flecha izquierda -->
                             <button class="carousel-button next" onclick="nextImage(8)">&#10095;</button> <!-- flecha derecha -->
@@ -814,54 +850,7 @@
 
             if (!subMenuDosVisible) {
                 const buttonsHTML = `
-                <div class="div-botones-submenu" data-button-number="50">
-                    <div class="div-producto">
-                        <div class="carousel-container">
-                            <div class="carousel-images" id="carousel-images-50">
-                                <img src="./img-pro/WTA-600.jpeg" alt="Imagen 1" class="carousel-image">
-                                <img src="./img-pro/WTA-600-2.jpeg" alt="Imagen 2" class="carousel-image">
-                                <img src="./img-pro/WTA-600-3.jpeg" alt="Imagen 3" class="carousel-image">
-                            </div>
-                            <button class="carousel-button prev" onclick="prevImage(50)">&#10094;</button> <!-- flecha izquierda -->
-                            <button class="carousel-button next" onclick="nextImage(50)">&#10095;</button> <!-- flecha derecha -->
-                        </div>
-                        <div class="div-parrafos">
-                            <button class="sub-menu-button" data-button-number="9">Warmer Exhibidor de Comidas Calientes <br> Take Away Vertical<br> WTA 600</button>
-                           <div class="palabra-detalles">
-                                <p onclick="toggleDetalles(50)" class="producto-detalles" style="
-                                width: 117px;
-                                font-size: 22px;
-                            ">Detalles</p>
-                            <span onclick="toggleDetalles(50)" id="flecha" class="flecha-detalles-abajo"></span>
-                            </div>
-                            <div class="detalles" data-button-number="50">
-                            <ul style="line-height:120%">
-                                <li><b>Medidas</b>: 600mm de Frente x 600mm de Fondo x 1900mm de Altura.</li>
-                                <li>Construido Gabinete de Ac Inoxidable 430 esmerilado interior y exterior.</li>
-                                <li>Aislación interior de lana mineral.</li>
-                                <li>Iluminación y calefacción por medio de lámparas halogenas de cuarzo de bajo consumo.</li>
-                                <li>Cuatro niveles de exhibición.</li>
-                                <li>Provisto de Interruptores por estante.</li>
-                                <li>Laterales de vidrio laminado 3+3 mm de espesor.</li>
-                                <li>Patas de acero inoxidable, provistas de regatones regulables de PVC.</li>  
-                            </ul>
-                            </div>
-                            <div class="div-detalles">
-                                <p>$8200</p>
-                                <input class="radio-button" type="radio" name="Warmer Exhibidor de Comidas Calientes Take Away Vertical WTA800" value="8200" style="margin: 0px;">
-                                <button class="counter-button" onclick="updateCounter(50, 'decrement')">-</button>
-                                <span class="counter-value" style="font-family: poppins;" poppins";"="">0</span>
-                                <button class="counter-button" onclick="updateCounter(50, 'increment')">+</button>
-                            </div>
-                        </div>   
-                    </div>    
-                    <div class="div-boton-agregar">
-                        <button class="boton-consulta" onclick="hacerConsulta(50)">Consultar</button>
-                        <button class="boton-agregar" onclick="agregarAlPedido(50)">Agregar al pedido</button>
-                    </div>
-                </div>
-
-
+               
                 <div class="div-botones-submenu" data-button-number="9">
                     <div class="div-producto">
 
@@ -973,9 +962,16 @@
 
                         <div class="carousel-container">
                             <div class="carousel-images" id="carousel-images-11">
-                                <img src="./img-pro/HTA-600.jpeg" alt="Imagen 1" class="carousel-image">
-                                <img src="./img-pro/HTA-600-2.jpeg" alt="Imagen 2" class="carousel-image">
-                                <img src="./img-pro/.jpeg" alt="Imagen 3" class="carousel-image">
+                                <img src="./img-pro/HTA-600.jpeg" alt="Imagen 1" class="carousel-image"
+                                style="
+                                height: 250px;">
+                                <img src="./img-pro/HTA-600-2.jpeg" alt="Imagen 2" class="carousel-image"
+                                style="width: 200px;
+                                margin-left: 51px;
+                                height: 250px;">
+                                <img src="./img-pro/.jpeg" alt="Imagen 3" class="carousel-image"
+                                style="
+                                margin-left: 49px;">
                             </div>
                             <button class="carousel-button prev" onclick="prevImage(11)">&#10094;</button> <!-- flecha izquierda -->
                             <button class="carousel-button next" onclick="nextImage(11)">&#10095;</button> <!-- flecha derecha -->
@@ -1224,9 +1220,18 @@
 
                         <div class="carousel-container">
                             <div class="carousel-images" id="carousel-images-15">
-                                <img src="./img-pro/MPV-600.jpeg" alt="Imagen 1" class="carousel-image">
-                                <img src="./img-pro/MPV-600-3.jpeg" alt="Imagen 2" class="carousel-image">
-                                <img src="./img-pro/MPV-600-4.jpeg" alt="Imagen 3" class="carousel-image">
+                                <img src="./img-pro/MPV-600.jpeg" alt="Imagen 1" class="carousel-image"
+                                style="width: 200px;
+                                margin-left: 51px;
+                                height: 250px;">
+                                <img src="./img-pro/MPV-600-3.jpeg" alt="Imagen 2" class="carousel-image"
+                                style="width: 200px;
+                                margin-left: 99px;
+                                height: 250px;">
+                                <img src="./img-pro/MPV-600-4.jpeg" alt="Imagen 3" class="carousel-image"
+                                style="width: 200px;
+                                margin-left: 99px;
+                                height: 250px;">
                             </div>
                             <button class="carousel-button prev" onclick="prevImage(15)">&#10094;</button> <!-- flecha izquierda -->
                             <button class="carousel-button next" onclick="nextImage(15)">&#10095;</button> <!-- flecha derecha -->
@@ -1388,7 +1393,7 @@
                         </div>
 
                         <div class="div-parrafos">
-                            <button class="sub-menu-button" data-button-number="17">Heladera Bajo Mesada <br>3 Puertas c/motor incorporado <br>HM 1900</button>
+                            <button class="sub-menu-button" data-button-number="17">Heladera Bajo Mesada <br>3 Puertas c/motor incorporado <br>HM3P</button>
                            <div class="palabra-detalles">
                                 <p onclick="toggleDetalles(17)" class="producto-detalles" style="
                                 width: 117px;
@@ -1433,9 +1438,17 @@
 
                         <div class="carousel-container">
                             <div class="carousel-images" id="carousel-images-18">
-                                <img src="./img-pro/HM4P.jpeg" alt="Imagen 1" class="carousel-image">
-                                <img src="./img-pro/HM4P-6.jpeg" alt="Imagen 2" class="carousel-image">
-                                <img src="./img-pro/HM4P-7.jpeg" alt="Imagen 3" class="carousel-image">
+                                <img src="./img-pro/HM4P.jpeg" alt="Imagen 1" class="carousel-image"
+                                style="
+                                height: 250px;">
+                                <img src="./img-pro/HM4P-6.jpeg" alt="Imagen 2" class="carousel-image"
+                                style="width: 200px;
+                                margin-left: 51px;
+                                height: 250px;">
+                                <img src="./img-pro/HM4P-7.jpeg" alt="Imagen 3" class="carousel-image"
+                                style="width: 200px;
+                                margin-left: 99px;
+                                height: 250px;">
                             </div>
                             <button class="carousel-button prev" onclick="prevImage(18)">&#10094;</button> <!-- flecha izquierda -->
                             <button class="carousel-button next" onclick="nextImage(18)">&#10095;</button> <!-- flecha derecha -->
@@ -1443,7 +1456,7 @@
 
 
                         <div class="div-parrafos">
-                            <button class="sub-menu-button" data-button-number="18">Heladera Bajo Mesada <br>4 Puertas c/motor incorporado<br> HM 2400</button>
+                            <button class="sub-menu-button" data-button-number="18">Heladera Bajo Mesada <br>4 Puertas c/motor incorporado<br> HM4P</button>
                             <div class="palabra-detalles">
                                 <p onclick="toggleDetalles(18)" class="producto-detalles" style="
                                 width: 117px;
@@ -1486,9 +1499,8 @@
 
                         <div class="carousel-container">
                             <div class="carousel-images" id="carousel-images-19">
-                                <img src="producto-1-1.png" alt="Imagen 1" class="carousel-image">
-                                <img src="producto-1-2.png" alt="Imagen 2" class="carousel-image">
-                                <img src="producto-1-3.png" alt="Imagen 3" class="carousel-image">
+                                <img src="./img-pro/HT-1000.jpeg" alt="Imagen 1" class="carousel-image">
+                                <img src="./img-pro/HT-1000-2.jpeg" alt="Imagen 1" class="carousel-image">
                             </div>
                             <button class="carousel-button prev" onclick="prevImage(19)">&#10094;</button> <!-- flecha izquierda -->
                             <button class="carousel-button next" onclick="nextImage(19)">&#10095;</button> <!-- flecha derecha -->
@@ -1505,9 +1517,17 @@
                             </div>
                             <div class="detalles" data-button-number="19">
                             <ul style="line-height:120%">
-                                <li><b>Medidas</b>: 20cm Ancho, 15cm Alto & 30cm Profundidad.</li>
-                                <li><b>Materiales</b>:</li>
-                                <li><b>Temperatura</b>:</li>
+                                <li><b>Medidas</b>:  1000mm de frente x 850mm de fondo x 1250mm de altura.</li>
+                                <li>Construida Gabinete de paneles acero inoxidable esmerilado inyectados en poliuretano.</li>
+                                <li>Cúpula de vidrio termopanel 4+9+6mm.</li>
+                                <li>Estantes de vidrio laminado 3+3mm.</li>
+                                <li>Iluminación led en techo y estante.</li>
+                                <li>Tres niveles de exposición, dos estantes mas piso.</li>
+                                <li>Patas de acero inoxidable con regatones regulables de PVC. </li>
+                                <li>Provista de bandeja de desague evaporativa.</li>
+                                <li>Refrigeración y descongelamiento por medio de combistato digital programable.</li>
+                                <li>Unidad condensadora 1/2hp, gas r404, 220volts.</li>
+                                <li>Frio forzado. </li>
                             </ul>
                             </div>
                             <div class="div-detalles">
@@ -1530,9 +1550,7 @@
 
                         <div class="carousel-container">
                             <div class="carousel-images" id="carousel-images-20">
-                                <img src="producto-1-1.png" alt="Imagen 1" class="carousel-image">
-                                <img src="producto-1-2.png" alt="Imagen 2" class="carousel-image">
-                                <img src="producto-1-3.png" alt="Imagen 3" class="carousel-image">
+                                <img src="./img-pro/HTA-1200-2.jpeg" alt="Imagen 1" class="carousel-image">
                             </div>
                             <button class="carousel-button prev" onclick="prevImage(20)">&#10094;</button> <!-- flecha izquierda -->
                             <button class="carousel-button next" onclick="nextImage(20)">&#10095;</button> <!-- flecha derecha -->
@@ -1550,9 +1568,17 @@
                             </div>
                             <div class="detalles" data-button-number="20">
                             <ul style="line-height:120%">
-                                <li><b>Medidas</b>: 20cm Ancho, 15cm Alto & 30cm Profundidad.</li>
-                                <li><b>Materiales</b>:</li>
-                                <li><b>Temperatura</b>:</li>
+                                <li><b>Medidas</b>: 1200mm de frente x 850mm de fondo x 1250mm de altura.</li>
+                                <li>Construida Gabinete de paneles acero inoxidable esmerilado inyectados en poliuretano.</li>
+                                <li>Cúpula de vidrio termopanel 4+9+6mm.</li>
+                                <li>Estantes de vidrio laminado 3+3mm.</li>
+                                <li>Iluminación led en techo y estante.</li>
+                                <li>Tres niveles de exposición, dos estantes mas piso.</li>
+                                <li>Patas de acero inoxidable con regatones regulables de PVC. </li>
+                                <li>Provista de bandeja de desague evaporativa.</li>
+                                <li>Refrigeración y descongelamiento por medio de combistato digital programable.</li>
+                                <li>Unidad condensadora 1/2hp, gas r404, 220volts. </li>
+                                <li>Frio forzado. </li>
                             </ul>
                             </div>
                             <div class="div-detalles">
@@ -1576,9 +1602,14 @@
 
                         <div class="carousel-container">
                             <div class="carousel-images" id="carousel-images-21">
-                                <img src="producto-1-1.png" alt="Imagen 1" class="carousel-image">
-                                <img src="producto-1-2.png" alt="Imagen 2" class="carousel-image">
-                                <img src="producto-1-3.png" alt="Imagen 3" class="carousel-image">
+                                <img src="./img-pro/HT-1500.jpeg" alt="Imagen 1" class="carousel-image"
+                                style="width: 200px;
+                                margin-left: 51px;
+                                height: 250px;">
+                                <img src="./img-pro/HT-1500-2.jpeg" alt="Imagen 2" class="carousel-image"
+                                style="width: 200px;
+                                margin-left: 99px;
+                                height: 250px;">
                             </div>
                             <button class="carousel-button prev" onclick="prevImage(21)">&#10094;</button> <!-- flecha izquierda -->
                             <button class="carousel-button next" onclick="nextImage(21)">&#10095;</button> <!-- flecha derecha -->
@@ -1596,9 +1627,17 @@
                             </div>
                             <div class="detalles" data-button-number="21">
                             <ul style="line-height:120%">
-                                <li><b>Medidas</b>: 20cm Ancho, 15cm Alto & 30cm Profundidad.</li>
-                                <li><b>Materiales</b>:</li>
-                                <li><b>Temperatura</b>:</li>
+                                <li><b>Medidas</b>: 1500mm de frente x 850mm de fondo x 1250mm de altura.</li>
+                                <li>Construida Gabinete de paneles acero inoxidable esmerilado inyectados en poliuretano.</li>
+                                <li>Cúpula de vidrio termopanel 4+9+6mm.</li>
+                                <li>Estantes de vidrio laminado 3+3mm.</li>
+                                <li>Iluminación led en techo y estante.</li>
+                                <li>Tres niveles de exposición, dos estantes mas piso.</li>
+                                <li>Patas de acero inoxidable con regatones regulables de PVC. </li>
+                                <li>Provista de bandeja de desague evaporativa.</li>
+                                <li>Refrigeración y descongelamiento por medio de combistato digital programable.</li>
+                                <li>Unidad condensadora 3/4hp, Gas r404,  220volts. </li>
+                                <li>Frio forzado. </li>
                             </ul>
                             </div>
                             <div class="div-detalles">
@@ -1670,9 +1709,6 @@
 
                         <div class="carousel-container">
                             <div class="carousel-images" id="carousel-images-22">
-                                <img src="producto-1-1.png" alt="Imagen 1" class="carousel-image">
-                                <img src="producto-1-2.png" alt="Imagen 2" class="carousel-image">
-                                <img src="producto-1-3.png" alt="Imagen 3" class="carousel-image">
                             </div>
                             <button class="carousel-button prev" onclick="prevImage(22)">&#10094;</button> <!-- flecha izquierda -->
                             <button class="carousel-button next" onclick="nextImage(22)">&#10095;</button> <!-- flecha derecha -->
@@ -1927,8 +1963,8 @@
                         <div class="carousel-container">
                             <div class="carousel-images" id="carousel-images-27">
                                 <img src="./img-pro/ME-1200.jpeg" alt="Imagen 1" class="carousel-image">
-                                <img src="./img-pro/" alt="Imagen 2" class="carousel-image">
-                                <img src="./img-pro/" alt="Imagen 3" class="carousel-image">
+                                <img src="./img-pro/ME-1200-1" alt="Imagen 2" class="carousel-image">
+                                <img src="./img-pro/ME-1200-2" alt="Imagen 3" class="carousel-image">
                             </div>
                             <button class="carousel-button prev" onclick="prevImage(27)">&#10094;</button> <!-- flecha izquierda -->
                             <button class="carousel-button next" onclick="nextImage(27)">&#10095;</button> <!-- flecha derecha -->
