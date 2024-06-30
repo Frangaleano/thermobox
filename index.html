@@ -26,25 +26,25 @@
         <header>
             <nav class="navbar">
                 <div class="navbar-overlay" onclick="toggleMenuOpen()"></div>
-    
+
                 <button type="button" class="navbar-burger" onclick="toggleMenuOpen()">
                     <span class="material-icons" style="font-size: 28px; color: black;">menu</span>
                 </button>
-    
+
                 <a class="index" href="./index.html">
                     <h1 class="navbar-title"><b>ThermoBox</b></h1>
                 </a>
-    
+
                 <nav class="navbar-menu">
                     <div style="display: flex; flex-direction: column; align-items: center;">
                         <a href="#nosotros" onclick="closeMenu()">
                             <button type="button" class="active">Nosotros</button>
                         </a>
-    
+
                         <a href="#section-menu" onclick="closeMenu()">
                             <button type="button" class="active">Menú</button>
                         </a>
-    
+
                         <a href="#section-contacto" onclick="closeMenu()">
                             <button type="button" class="active">Contacto</button>
                         </a>
@@ -53,21 +53,21 @@
                         <img class="logoHome" src="./logo-fondoblanco.png" alt="logo">
                     </div>
                 </nav>
-    
+
             </nav>
         </header>
 
         <script type="text/javascript">
             const toggleMenuOpen = () => {
-            document.body.classList.toggle("open");
-        };
+                document.body.classList.toggle("open");
+            };
 
-        const closeMenu = () => {
-            // Asegúrate de que el menú está cerrado.
-            if (document.body.classList.contains("open")) {
-                toggleMenuOpen();
-            }
-        };
+            const closeMenu = () => {
+                // Asegúrate de que el menú está cerrado.
+                if (document.body.classList.contains("open")) {
+                    toggleMenuOpen();
+                }
+            };
         </script>
 
 
@@ -274,14 +274,14 @@
     </div>
 
     <script>
-            window.addEventListener('load', () => {
-                setTimeout(() => {
-                    const introOverlay = document.querySelector('.intro-overlay');
-                    introOverlay.classList.add('hidden');
-                    document.body.style.overflow = 'auto'; // Permite el desplazamiento después de la animación
-                }, 2300);
-            });
-        </script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const introOverlay = document.querySelector('.intro-overlay');
+                introOverlay.classList.add('hidden');
+                document.body.style.overflow = 'auto'; // Permite el desplazamiento después de la animación
+            }, 2300);
+        });
+    </script>
 
     <script>
 
@@ -426,8 +426,11 @@
                             </ul>
                             </div>
                             <div class="div-detalles">
+                            <div>
                                 <p>$8200</p>
-                                <input class="radio-button" type="radio" name="Warmer Economico Sobremesada WESM40" value="8200" style="margin: 0px;">
+                                <p>+ IVA 10,5%</p>
+                            </div>    
+                                <input class="radio-button" type="radio" name="Warmer Economico Sobremesada WESM40" value="8200" data-iva="10.5" style="margin: 0px;">
                                 <button class="counter-button" onclick="updateCounter(1, 'decrement')">-</button>
                                 <span class="counter-value" style="font-family: poppins;" poppins";"="">0</span>
                                 <button class="counter-button" onclick="updateCounter(1, 'increment')">+</button>
@@ -2166,6 +2169,7 @@
         function agregarAlPedido(buttonNumber) {
             const itemNameElement = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] .sub-menu-button`);
             const selectedInputElement = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] input:checked`);
+            const ivaPercentage = parseFloat(selectedInputElement.getAttribute('data-iva'));
 
             if (!itemNameElement || !selectedInputElement) {
                 console.error('No se encontraron elementos necesarios para agregar al pedido');
@@ -2174,9 +2178,13 @@
 
             const itemName = itemNameElement.textContent;
             const itemPrice = parseFloat(selectedInputElement.value);
-            const itemCount = counters[buttonNumber];
+            const itemCount = parseInt(document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] .counter-value`).textContent);
 
-            const precioTotalProducto = itemPrice * itemCount;
+            // Calcular el IVA
+            const ivaAmount = itemPrice * (ivaPercentage / 100);
+
+            // Calcular el precio total con IVA
+            const precioTotalProducto = itemPrice * itemCount + ivaAmount * itemCount;
 
             const pedido = {
                 producto: {
@@ -2376,11 +2384,12 @@
 
                 // Recorrer cada producto en la lista de productos guardados
                 productosGuardados.forEach((producto) => {
-                    mensajeWhatsApp += `${producto.producto.nombre} - Cantidad: ${producto.producto.cantidad} - Precio: $${producto.producto.precio}\n`;
+                    const ivaPercentage = producto.producto.ivaPercentage;
+                    const ivaAmount = producto.producto.precio * (ivaPercentage / 100);
+                    const precioTotalProducto = producto.producto.precio * producto.producto.cantidad + ivaAmount * producto.producto.cantidad;
 
-
-                    // Agregar el precio total del producto
-                    mensajeWhatsApp += `Precio Total del Producto: $${producto.producto.precioTotal}\n\n`;
+                    mensajeWhatsApp += `${producto.producto.nombre} - Cantidad: ${producto.producto.cantidad} - Precio: $${producto.producto.precio} - IVA: ${ivaPercentage}% - Precio con IVA: $${producto.producto.precio + ivaAmount}\n`;
+                    mensajeWhatsApp += `Precio Total del Producto: $${precioTotalProducto}\n\n`;
                 });
 
                 // Agregar el precio total del pedido obtenido del localStorage
