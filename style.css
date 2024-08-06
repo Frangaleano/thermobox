@@ -39,8 +39,9 @@
 }
 
 .logo-container img {
-  width: 250px;
-  height: 200px;
+  width: 13.5em;
+  height: 8em;
+  filter: drop-shadow(-3px 4px 4px #000000);
 }
 
 @keyframes slideIn {
@@ -122,6 +123,12 @@
     height: 72px;
   }
 
+  .index {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
   .navbar-title {
     font-size: 20px;
     color: rgb(0, 0, 0);
@@ -132,6 +139,10 @@
     color: white;
     font-size: 25px;
     margin-left: 2px;
+  }
+
+  .logo-thermo {
+    height: 30px;
   }
 
   .active {
@@ -1021,6 +1032,14 @@
     margin: 15px 0px;
   }
 
+  .info-mapa {
+    font-family: "Poppins";
+    color: white;
+    margin: 10px 0px;
+    border-radius: 20px;
+    border: solid #c92929 2px;
+  }
+
   .text-info {
     font-family: "Poppins";
     color: black;
@@ -1086,4 +1105,47 @@
     justify-content: center;
   }
 
+  .mapa {
+    width: 276px;
+    border-radius: 20px;
+  }
+}
+
+@media (min-width: 650px) {
+
+  .navbar {
+    height: 62px;
+    padding: 12px;
+  }
+
+  .navbar-title {
+    font-size: 26px;
+  }
+
+  .logo-thermo {
+    height: 40px;
+  }
+
+  .menu-button {
+    padding: 10px 57px;
+  }
+
+  .total {
+    top: 12px;
+  }
+
+  .eliminar-producto {
+    margin-right: 0px;
+    margin-left: 25px;
+  }
+
+  .mapa {
+    width: 376px;
+    height: 199px;
+  }
+
+  .iconoFtHome {
+    width: 54px;
+    height: 21px;
+  }
 }
