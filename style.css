@@ -17,59 +17,61 @@
     overflow: hidden;
   }
 
-  
-.intro-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgb(180 182 187);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  transition: opacity 1s ease-in-out;
-}
 
-.logo-container {
-  position: relative;
-  animation: slideIn 1s ease-in-out forwards, slideOut 1s ease-in-out 2.5s forwards;
-  transition: opacity .5 ease-in-out;
-}
+  .intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(180 182 187);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 1s ease-in-out;
+  }
 
-.logo-container img {
-  width: 13.5em;
-  height: 8em;
-  filter: drop-shadow(-3px 4px 4px #000000);
-}
+  .logo-container {
+    position: relative;
+    animation: slideIn 1s ease-in-out forwards, slideOut 1s ease-in-out 2.5s forwards;
+    transition: opacity .5 ease-in-out;
+  }
 
-@keyframes slideIn {
-  from {
+  .logo-container img {
+    width: 13.5em;
+    height: 8em;
+    filter: drop-shadow(-3px 4px 4px #000000);
+  }
+
+  @keyframes slideIn {
+    from {
       transform: translateY(100%);
       opacity: 0;
-  }
-  to {
-      transform: translateY(0);
-      opacity: 1;
-  }
-}
+    }
 
-@keyframes slideOut {
-  from {
+    to {
       transform: translateY(0);
       opacity: 1;
+    }
   }
-  to {
+
+  @keyframes slideOut {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    to {
       transform: translateY(-250%);
       opacity: 0;
+    }
   }
-}
 
-.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
+  .hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
 
   button {
     border: 0;
@@ -255,6 +257,51 @@
     filter: drop-shadow(-3px 4px 4px #000000);
   }
 
+  .cta-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .7em;
+    justify-content: center;
+    margin: 5px;
+  }
+
+  .cta-btn {
+    background: rgba(144, 144, 144, 0.786);
+    color: #fff;
+    border: 2px solid rgb(69, 69, 69);
+    border-radius: 50px;
+    padding: 7px;
+    font-size: .7em;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, transform 0.2s;
+    animation: shadowAnimationIn 2s infinite;
+    width: 118px;
+  }
+
+  .cta-btn-2 {
+    background: rgba(144, 144, 144, 0.786);
+    border-radius: 50px;
+    padding: 7px;
+    font-size: .7em;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 1);
+    width: 130px;
+  }
+
+  .cta-btn:hover {
+    background: black;
+    transform: translateY(-2px) scale(1.04);
+  }
+
   #menu-title {
     color: white;
     border: solid 3px black;
@@ -405,7 +452,7 @@
     opacity: 0;
     position: fixed;
     border: 2px solid #ff0000;
-    padding: 4px 37px;
+    padding: 5px 15px;
     border-radius: 30px;
     z-index: 21;
     top: 5px;
@@ -469,43 +516,44 @@
     position: relative;
     width: 300px;
     overflow: hidden;
-}
+  }
 
-.carousel-images {
+  .carousel-images {
     display: flex;
     transition: transform 0.5s ease-in-out;
-}
+  }
 
-.carousel-image {
-    width: 100%; /* Se muestra una imagen a la vez */
+  .carousel-image {
+    width: 100%;
+    /* Se muestra una imagen a la vez */
     flex-shrink: 0;
-}
+  }
 
-.carousel-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-62%);
-  background: rgb(147 142 142 / 50%);
-  color: rgb(217 34 34);
-  cursor: pointer;
-  z-index: 10;
-  font-size: 22px;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
+  .carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-62%);
+    background: rgb(147 142 142 / 50%);
+    color: rgb(217 34 34);
+    cursor: pointer;
+    z-index: 10;
+    font-size: 22px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
 
-.carousel-button.prev {
+  .carousel-button.prev {
     left: 10px;
-}
+  }
 
-.carousel-button.next {
+  .carousel-button.next {
     right: 10px;
-}
+  }
 
   .div-detalles {
     display: flex;
@@ -595,8 +643,9 @@
     display: none;
     opacity: 0;
     transform: translateY(-50px);
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Transición suave */
-}
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    /* Transición suave */
+  }
 
   .flecha-detalles-abajo {
     border: solid #e22e2e;
@@ -707,8 +756,8 @@
   }
 
   #tuPedidoBtn img {
-     width: 25px;
-  margin-right: 5px;
+    width: 25px;
+    margin-right: 5px;
   }
 
   #pedidoDropdown {

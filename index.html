@@ -11,18 +11,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <script type="module">
-        import ScrollReveal from 'https://cdn.jsdelivr.net/npm/scrollreveal@4/dist/scrollreveal.es.js';
-
-        ScrollReveal().reveal('.reveal', {
-            duration: 2000,
-            origin: 'left',
-            distance: '100px',
-            easing: 'ease-in-out',
-            delay: 500,
-            reset: true
-        });
-    </script>
 </head>
 
 <body>
@@ -49,7 +37,7 @@
                 </a>
 
                 <nav class="navbar-menu">
-                    <div style="display: flex; flex-direction: column; align-items: center;">
+                    <div style="display: flex; flex-direction: column; align-items: flex-start;">
                         <a href="#nosotros" onclick="closeMenu()">
                             <button type="button" class="active">Nosotros</button>
                         </a>
@@ -115,6 +103,19 @@
                         <p class="card-text">Fabricación y Comercialización de Equipamiento Comercial Gastronómico <br>
                             en<b>
                                 Acero Inoxidable</b></p>
+
+                        <div class="cta-buttons">
+                            <a href="section-menu">
+                                <button type="button" class="cta-btn">
+                                    Ir al menú</button>
+                            </a>
+                            <a href="#section-contacto">
+                                <button type="button" class="cta-btn-2">
+                                    Contactanos
+                                </button>
+                            </a>
+                        </div>
+                    
                     </div>
                 </div>
 

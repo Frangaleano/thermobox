@@ -3,7 +3,7 @@ window.addEventListener('load', () => {
         const introOverlay = document.querySelector('.intro-overlay');
         introOverlay.classList.add('hidden');
         document.body.style.overflow = 'auto'; // Permite el desplazamiento después de la animación
-    }, 2300);
+    }, 2000);
 });
 
 const carouselInnerdos = document.querySelector('.carousel-inner-dos');
