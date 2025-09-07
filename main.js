@@ -220,70 +220,14 @@ function toggleSubMenu() {
         </div>
 
         
-        <div class="div-botones-submenu" data-button-number="3">
-            <div class="div-producto">
-
-
-                <div class="carousel-container">
-                    <div class="carousel-images" id="carousel-images-3">
-                        <img src="./img-pro/WSM-500-5.webp" alt="Imagen 1" class="carousel-image">
-                        <img src="./img-pro/WSM-500-6.webp" alt="Imagen 2" class="carousel-image">
-                        <img src="./img-pro/WSM-500-7.webp" alt="Imagen 3" class="carousel-image">
-                    </div>
-                    <button class="carousel-button prev" onclick="prevImage(3)">&#10094;</button> <!-- flecha izquierda -->
-                    <button class="carousel-button next" onclick="nextImage(3)">&#10095;</button> <!-- flecha derecha -->
-                </div>
-
-
-                <div class="div-parrafos">
-                    <button class="sub-menu-button" data-button-number="3">Warmer Exhibidor <br>Sobremesada - WSM 500</button>
-                    <div class="palabra-detalles">
-                        <p onclick="toggleDetalles(3)" class="producto-detalles" style="
-                        width: 117px;
-                        font-size: 22px;
-                    ">Detalles</p>
-                    <span onclick="toggleDetalles(3)" id="flecha" class="flecha-detalles-abajo"></span>
-                    </div>
-                    <div class="detalles" data-button-number="3">
-                    <ul style="line-height:120%">
-                        <li><b>Medidas</b>: 500mm de Frente x 600mm de Fondo x 650mm de Altura.</li>
-                        <li>Construido Gabinete totalmente en Ac Inoxidable 430 esmerilado.</li>
-                        <li>Cúpula y Estante de vidrio templado de 6mm de espesor.</li>
-                        <li>Dos niveles de Exhibición.</li>
-                        <li>Piso y estante calefaccionados por medio de lámparas halogenas de 150 watts c/u.</li>
-                        <li>Dos circuitos de iluminación con interruptor independiente.</li>
-                        <li>Provisto de Dimmer Regulador de Temperatura.</li>
-                        <li>Alimentacion 220 volts, Consumo aproximado maximo 3 amperes.</li>
-                    </ul>
-                    </div>
-                    <div class="div-detalles">
-                        <div>
-                        <p>$690.000</p>
-                        <p>+IVA 10,5%</p>
-                    </div> 
-                        <input class="radio-button" type="radio" name="Warmer Exhibidor Sobremesada WSM500" value="690000" data-iva="10.5" style="margin: 0px;">
-                        <button class="counter-button" onclick="updateCounter(3, 'decrement')">-</button>
-                        <span class="counter-value" style="font-family: poppins;" poppins";"="">0</span>
-                        <button class="counter-button" onclick="updateCounter(3, 'increment')">+</button>
-                    </div>
-                </div>   
-            </div>     
-            <div class="div-boton-agregar">
-                <button class="boton-consulta" onclick="hacerConsulta(3)">Consultar</button>
-                <button class="boton-agregar" onclick="agregarAlPedido(3)">Agregar al pedido</button>
-            </div>
-        </div>
-
-        
         <div class="div-botones-submenu" data-button-number="63">
             <div class="div-producto">
 
 
                 <div class="carousel-container">
                     <div class="carousel-images" id="carousel-images-63">
-                        <img src="./img-pro/WSM-500-5.webp" alt="Imagen 1" class="carousel-image">
-                        <img src="./img-pro/WSM-500-6.webp" alt="Imagen 2" class="carousel-image">
-                        <img src="./img-pro/WSM-500-7.webp" alt="Imagen 3" class="carousel-image">
+                        <img src="./img-pro/WSM-700.jpeg" alt="Imagen 1" class="carousel-image">
+                        <img src="./img-pro/WSM-700-2.jpeg" alt="Imagen 2" class="carousel-image">
                     </div>
                     <button class="carousel-button prev" onclick="prevImage(63)">&#10094;</button> <!-- flecha izquierda -->
                     <button class="carousel-button next" onclick="nextImage(63)">&#10095;</button> <!-- flecha derecha -->
